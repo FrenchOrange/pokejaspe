@@ -24,7 +24,7 @@ OlivineLighthouse6F_MapScriptHeader:
 OlivineLighthouseJasmine:
 	faceplayer
 	opentext
-	checkkeyitem SECRETPOTION
+	checkkeyitem POTION
 	iftruefwd .BroughtSecretpotion
 	checkevent EVENT_JASMINE_EXPLAINED_AMPHYS_SICKNESS
 	iftruefwd .ExplainedSickness
@@ -40,7 +40,7 @@ OlivineLighthouseJasmine:
 	iffalsefwd .Refused
 	writetext PlayerHandedSecretpotionText
 	promptbutton
-	takekeyitem SECRETPOTION
+	takekeyitem POTION
 	writetext JasmineDontBeOffendedText
 	waitbutton
 	closetext

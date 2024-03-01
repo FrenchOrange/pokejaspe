@@ -627,6 +627,13 @@ DEF NUM_WINGS EQU const_value
 ; - KeyItemIconPalettes (see gfx/items/key_items.pal)
 ; - KeyItemEffects (see engine/items/item_effects.asm)
 	const_def 1
+	const SHARP_SICKLE ; new
+	const MACHO_GLOVE  ; new
+	const MINING_GEAR  ; new
+	const SURF_BOARD   ; new
+	const SPORTS_SHOES ; new
+	const DADS_PARCEL  ; new
+	const TRAVEL_TRUNK ; new
 	const BICYCLE      ; 01
 	const OLD_ROD      ; 02
 	const GOOD_ROD     ; 03
@@ -635,15 +642,11 @@ DEF NUM_WINGS EQU const_value
 	const COIN_CASE    ; 06
 	const APRICORN_BOX ; 07
 	const WING_CASE    ; 08
-	const TYPE_CHART   ; 09
 	const GBC_SOUNDS   ; 0a
 	const BLUE_CARD    ; 0b
 	const SQUIRTBOTTLE ; 0c
 	const SILPHSCOPE2  ; 0d
 	const MYSTERY_EGG  ; 0e
-	const SECRETPOTION ; 0f
-	const GO_GOGGLES   ; 10
-	const RED_SCALE    ; 11
 	const CARD_KEY     ; 12
 	const BASEMENT_KEY ; 13
 	const LOST_ITEM    ; 14
@@ -652,14 +655,11 @@ DEF NUM_WINGS EQU const_value
 	const SILVER_WING  ; 17
 	const CLEAR_BELL   ; 18
 	const GS_BALL      ; 19
-	const S_S_TICKET   ; 1a
+	const FERRY_PASS   ; 1a
 	const PASS         ; 1b
 	const ORANGETICKET ; 1c
 	const MYSTICTICKET ; 1d
 	const OLD_SEA_MAP  ; 1e
-	const HARSH_LURE   ; 1f
-	const POTENT_LURE  ; 20
-	const MALIGN_LURE  ; 21
 DEF CHARMS_START EQU const_value
 	; Only charms below this point!
 	const SHINY_CHARM  ; 22
@@ -677,15 +677,15 @@ DEF NUM_KEY_ITEMS EQU const_value - 1
 	const NAM_CATCH_CHARM
 	const NAM_CLEAR_BELL
 	const NAM_COIN_CASE
+	const NAM_DADS_PARCEL
 	const NAM_GBC_SOUNDS
-	const NAM_GO_GOGGLES
 	const NAM_GOOD_ROD
 	const NAM_GS_BALL
-	const NAM_HARSH_LURE
 	const NAM_ITEMFINDER
 	const NAM_LOST_ITEM
 	const NAM_MACHINE_PART
-	const NAM_MALIGN_LURE
+	const NAM_MACHO_GLOVE
+	const NAM_MINING_GEAR
 	const NAM_MYSTERY_EGG
 	const NAM_MYSTICTICKET
 	const NAM_OLD_ROD
@@ -693,16 +693,16 @@ DEF NUM_KEY_ITEMS EQU const_value - 1
 	const NAM_ORANGETICKET
 	const NAM_OVAL_CHARM
 	const NAM_PASS
-	const NAM_POTENT_LURE
 	const NAM_RAINBOW_WING
-	const NAM_RED_SCALE
-	const NAM_S_S_TICKET
-	const NAM_SECRETPOTION
+	const NAM_FERRY_PASS
+	const NAM_SHARP_SICKLE
 	const NAM_SHINY_CHARM
 	const NAM_SILPHSCOPE2
 	const NAM_SILVER_WING
 	const NAM_SQUIRTBOTTLE
+	const NAM_SPORTS_SHOES
 	const NAM_SUPER_ROD
-	const NAM_TYPE_CHART
+	const NAM_SURF_BOARD
+	const NAM_TRAVEL_TRUNK
 	const NAM_WING_CASE
 	assert const_value - 1 == NUM_KEY_ITEMS

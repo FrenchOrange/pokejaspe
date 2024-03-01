@@ -463,7 +463,7 @@ ElmAskBattleScript:
 ElmGiveTicketScript:
 	writetext ElmGiveTicketText1
 	promptbutton
-	verbosegivekeyitem S_S_TICKET
+	verbosegivekeyitem FERRY_PASS
 	writetext ElmGiveTicketText2
 	waitbutton
 	closetext

@@ -706,11 +706,6 @@ SECTION "Painting Pic Pointers", ROMX
 INCLUDE "data/events/paintings/pic_pointers.asm"
 
 
-SECTION "Type Chart", ROMX
-
-INCLUDE "engine/items/type_chart.asm"
-
-
 SECTION "VWF", ROMX
 
 INCLUDE "engine/gfx/vwf.asm"

@@ -1343,9 +1343,6 @@ TownMap_InitFlyPossible:
 	lb de, FLY, HM_FLY
 	farcall CheckPartyMove
 	jr c, .no_fly
-	ld de, ENGINE_STORMBADGE
-	farcall CheckBadge
-	jr c, .no_fly
 	farcall CheckFlyAllowedOnMap
 	jr nz, .no_fly
 	ld a, TRUE

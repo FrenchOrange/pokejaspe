@@ -2012,12 +2012,6 @@ _TMHMNotCompatibleText::
 	text "."
 	prompt
 
-SECTION "_BadgeRequiredText", ROMX
-_BadgeRequiredText::
-	text "Sorry! A new Badge"
-	line "is required."
-	prompt
-
 SECTION "_CantUseItemText", ROMX
 _CantUseItemText::
 	text "Can't use that"
@@ -2026,15 +2020,14 @@ _CantUseItemText::
 
 SECTION "_UseCutText", ROMX
 _UseCutText::
-	text_ram wStringBuffer2
-	text " used"
-	line "Cut!"
+	text "<PLAYER> used"
+	line "Sharp Sickle!"
 	prompt
 
 SECTION "_CutNothingText", ROMX
 _CutNothingText::
 	text "There's nothing to"
-	line "Cut here."
+	line "hack away."
 	prompt
 
 SECTION "_AskFlashText", ROMX
@@ -2052,9 +2045,8 @@ _BlindingFlashText::
 
 SECTION "_UsedSurfText", ROMX
 _UsedSurfText::
-	text_ram wStringBuffer2
-	text " used"
-	line "Surf!"
+	text "<PLAYER> hopped on"
+	line "the Surf Board!"
 	done
 
 SECTION "_CantSurfText", ROMX
@@ -2123,25 +2115,24 @@ _CantUseTeleportText::
 
 SECTION "_UseStrengthText", ROMX
 _UseStrengthText::
-	text_ram wStringBuffer2
-	text " used"
-	line "Strength!"
+	text "<PLAYER> used"
+	line "Macho Glove!"
 	done
 
 SECTION "_MoveBoulderText", ROMX
 _MoveBoulderText::
-	text_ram wStringBuffer1
-	text " can"
+	text "<PLAYER> can now"
 	line "move boulders."
 	prompt
 
 SECTION "_AskStrengthText", ROMX
 _AskStrengthText::
-	text "A #mon may be"
-	line "able to move this."
+	text "You would need a"
+	line "special item to be"
+	cont "able to move this."
 
-	para "Want to use"
-	line "Strength?"
+	para "Want to use the"
+	line "Macho Glove?"
 	done
 
 SECTION "_BouldersMoveText", ROMX
@@ -2152,8 +2143,9 @@ _BouldersMoveText::
 
 SECTION "_BouldersMayMoveText", ROMX
 _BouldersMayMoveText::
-	text "A #mon may be"
-	line "able to move this."
+	text "You would need a"
+	line "special item to be"
+	cont "able to move this."
 	done
 
 SECTION "_UseWhirlpoolText", ROMX
@@ -2204,18 +2196,13 @@ _AskHeadbuttText::
 
 SECTION "_UseRockSmashText", ROMX
 _UseRockSmashText::
-	text_ram wStringBuffer2
-	text " used"
-if DEF(FAITHFUL)
-	line "Rock Smash!"
-else
-	line "Brick Break!"
-endc
+	text "<PLAYER> used the"
+	line "Mining Gear!"
 	prompt
 
 SECTION "_MaySmashText", ROMX
 _MaySmashText::
-	text "Maybe a #mon"
+	text "Maybe an item"
 	line "can break this."
 	done
 
@@ -2224,14 +2211,15 @@ _AskRockSmashText::
 	text "This rock looks"
 	line "breakable."
 
-if DEF(FAITHFUL)
-	para "Want to use Rock"
-	line "Smash?"
-else
-	para "Want to use Brick"
-	line "Break?"
-endc
+	para "Want to use the"
+	line "Mining Gear?"
 	done
+
+SECTION "_AlreadyWearingShoesText", ROMX
+_AlreadyWearingShoesText::
+	text "You are already"
+	line "wearing them!"
+	prompt
 
 SECTION "_RodBiteText", ROMX
 _RodBiteText::
@@ -2269,15 +2257,16 @@ _GotOffBikeText::
 SECTION "_AskCutText", ROMX
 _AskCutText::
 	text "This tree can be"
-	line "Cut!"
+	line "cut down!"
 
-	para "Want to use Cut?"
+	para "Want to use the"
+	line "Sharp Sickle?"
 	done
 
 SECTION "_CanCutText", ROMX
 _CanCutText::
 	text "This tree can be"
-	line "Cut!"
+	line "cut down!"
 	done
 
 SECTION "_FoundItemText", ROMX

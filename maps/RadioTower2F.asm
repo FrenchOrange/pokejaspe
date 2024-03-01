@@ -91,7 +91,7 @@ Buena:
 	ifless EVE_HOUR, .TooEarly
 	checkflag ENGINE_BUENAS_PASSWORD
 	iffalsefwd .TuneIn
-	checkkeyitem BLUE_CARD
+	checkkeyitem POTION
 	iffalsefwd .NoBlueCard
 	readvar VAR_BLUECARDBALANCE
 	ifequalfwd BLUE_CARD_POINT_CAP, .BlueCardCapped0
@@ -135,7 +135,7 @@ Buena:
 	writetext RadioTower2FBuenaShowIntroductionText
 	promptbutton
 	setevent EVENT_MET_BUENA
-	verbosegivekeyitem BLUE_CARD
+	verbosegivekeyitem POTION
 .TuneIn:
 	writetext RadioTower2FBuenaTuneInToMyShowText
 	waitbutton

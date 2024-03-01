@@ -27,8 +27,7 @@ EarlsPokemonAcademy_MapScriptHeader:
 	const EARLSPOKEMONACADEMY_EARL
 
 AcademyEarl:
-	givekeyitem TYPE_CHART ; failsafe in case Violet City Earl is gone already in a save
-	applymovement EARLSPOKEMONACADEMY_EARL, AcademyEarlSpinMovement
+	givekeyitem POTION
 	faceplayer
 	opentext
 	writetext AcademyEarlIntroText

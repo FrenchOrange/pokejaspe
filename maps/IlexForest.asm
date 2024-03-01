@@ -370,11 +370,11 @@ IlexForestCharcoalMasterScript:
 IlexForestHeadbuttGuyScript:
 	faceplayer
 	opentext
-	checkkeyitem WING_CASE
+	checkkeyitem POTION
 	iftruefwd IlexForestTutorHeadbuttScript
 	writetext Text_HeadbuttIntro
 	promptbutton
-	verbosegivekeyitem WING_CASE
+	verbosegivekeyitem POTION
 	writetext Text_HeadbuttIntro2
 	waitbutton
 	setevent EVENT_LISTENED_TO_HEADBUTT_INTRO

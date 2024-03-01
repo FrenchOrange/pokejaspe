@@ -26,25 +26,25 @@ Route39RuggedRoadGate_MapScriptHeader:
 	const ROUTE39RUGGEDROADGATE_OFFICER
 
 Route39RuggedRoadGateStepLeftThreeTrigger:
-	checkkeyitem GO_GOGGLES
+	checkkeyitem POTION
 	iftrue DoNothingScript
 	applymovement PLAYER, Route39RuggedRoadGateStepLeftThreeMovementData
 	sjumpfwd Route39RuggedRoadGateCannotPassScript
 
 Route39RuggedRoadGateStepLeftTwoTrigger:
-	checkkeyitem GO_GOGGLES
+	checkkeyitem POTION
 	iftrue DoNothingScript
 	applymovement PLAYER, Route39RuggedRoadGateStepLeftTwoMovementData
 	sjumpfwd Route39RuggedRoadGateCannotPassScript
 
 Route39RuggedRoadGateStepLeftOneTrigger:
-	checkkeyitem GO_GOGGLES
+	checkkeyitem POTION
 	iftrue DoNothingScript
 	applyonemovement PLAYER, step_left
 	sjumpfwd Route39RuggedRoadGateCannotPassScript
 
 Route39RuggedRoadGateGoGogglesCheck:
-	checkkeyitem GO_GOGGLES
+	checkkeyitem POTION
 	iftrue DoNothingScript
 Route39RuggedRoadGateCannotPassScript:
 	showemote EMOTE_SHOCK, ROUTE39RUGGEDROADGATE_OFFICER, 15

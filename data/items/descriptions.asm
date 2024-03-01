@@ -258,6 +258,13 @@ ItemDescriptions:
 
 KeyItemDescriptions:
 	table_width 2, KeyItemDescriptions
+	dw SharpSickleDesc
+	dw MachoGloveDesc
+	dw MiningGearDesc
+	dw SurfBoardDesc
+	dw SportsShoesDesc
+	dw DadsParcelDesc
+	dw TravelTrunkDesc
 	dw BicycleDesc
 	dw OldRodDesc
 	dw GoodRodDesc
@@ -266,15 +273,11 @@ KeyItemDescriptions:
 	dw CoinCaseDesc
 	dw ApricornBoxDesc
 	dw WingCaseDesc
-	dw TypeChartDesc
 	dw GBCSoundsDesc
 	dw BlueCardDesc
 	dw SquirtBottleDesc
 	dw SilphScope2Desc
 	dw MysteryEggDesc
-	dw SecretPotionDesc
-	dw GoGogglesDesc
-	dw RedScaleDesc
 	dw CardKeyDesc
 	dw BasementKeyDesc
 	dw LostItemDesc
@@ -283,14 +286,11 @@ KeyItemDescriptions:
 	dw SilverWingDesc
 	dw ClearBellDesc
 	dw GSBallDesc
-	dw SSTicketDesc
+	dw FerryPassDesc
 	dw PassDesc
 	dw OrangeTicketDesc
 	dw MysticTicketDesc
 	dw OldSeaMapDesc
-	dw HarshLureDesc
-	dw PotentLureDesc
-	dw MalignLureDesc
 	dw ShinyCharmDesc
 	dw OvalCharmDesc
 	dw CatchCharmDesc
@@ -1515,6 +1515,41 @@ MintLeafDesc:
 	next "of mint."
 	done
 
+SharpSickleDesc:
+	text "Cuts down bushes"
+	next "and tall grass."
+	done
+
+MachoGloveDesc:
+	text "Pushes heavy"
+	next "boulders around."
+	done
+
+MiningGearDesc:
+	text "Smashes rocks and"
+	next "digs up treasures."
+	done
+
+SurfBoardDesc:
+	text "Ride the waves on"
+	next "this flashy board!"
+	done
+
+SportsShoesDesc:
+	text "Run faster by"
+	next "holding down B."
+	done
+
+DadsParcelDesc:
+	text "A parcel to be"
+	next "delivered to Dad."
+	done
+
+TravelTrunkDesc:
+	text "Neatly stores all"
+	next "your clothes."
+	done
+
 BicycleDesc:
 	text "A collapsible bike"
 	next "for fast movement."
@@ -1555,19 +1590,9 @@ SquirtBottleDesc:
 	next "watering plants."
 	done
 
-GoGogglesDesc:
-	text "Nifty goggles for"
-	next "sand or hail."
-	done
-
 SecretPotionDesc:
 	text "Fully heals any"
 	next "#mon."
-	done
-
-RedScaleDesc:
-	text "A scale from the"
-	next "red Gyarados."
 	done
 
 CardKeyDesc:
@@ -1579,9 +1604,9 @@ BasementKeyDesc:
 	text "Opens doors."
 	done
 
-SSTicketDesc:
-	text "A ticket for the"
-	next "S.S.Aqua."
+FerryPassDesc:
+	text "A pass for the"
+	next "island ferry."
 	done
 
 PassDesc:
@@ -1638,21 +1663,6 @@ MysticTicketDesc:
 OldSeaMapDesc:
 	text "A faded sea chart"
 	next "of a small island."
-	done
-
-HarshLureDesc:
-	text "A bottle with a"
-	next "cruel scent."
-	done
-
-PotentLureDesc:
-	text "A bottle with a"
-	next "strong smell."
-	done
-
-MalignLureDesc:
-	text "A bottle with a"
-	next "malevolent odor."
 	done
 
 ShinyCharmDesc:

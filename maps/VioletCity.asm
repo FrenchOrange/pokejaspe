@@ -71,7 +71,7 @@ VioletCityEarlScript:
 	opentext
 	writetext Text_HereTeacherIAm
 	promptbutton
-	verbosegivekeyitem TYPE_CHART
+	verbosegivekeyitem POTION
 	writetext Text_EarlsTypeChart
 	waitbutton
 	closetext

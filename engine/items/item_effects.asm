@@ -282,6 +282,13 @@ DoKeyItemEffect::
 KeyItemEffects:
 ; entries correspond to key item ids (see constants/item_constants.asm)
 	table_width 2, KeyItemEffects
+	dw SharpSickleEffect  ; SHARP_SICKLE
+	dw MachoGloveEffect   ; MACHO_GLOVE
+	dw MiningGearEffect   ; MINING_GEAR
+	dw SurfBoardEffect    ; SURF_BOARD
+	dw WearingShoesEffect ; SPORTS_SHOES
+	dw IsntTheTimeMessage ; DADS_PARCEL
+	dw IsntTheTimeMessage ; TRAVEL_TRUNK
 	dw BikeFunction       ; BICYCLE
 	dw OldRod             ; OLD_ROD
 	dw GoodRod            ; GOOD_ROD
@@ -289,16 +296,12 @@ KeyItemEffects:
 	dw Itemfinder         ; ITEMFINDER
 	dw CoinCase           ; COIN_CASE
 	dw ApricornBox        ; APRICORN_BOX
-	dw WingCase           ; WING_CASE
-	dw TypeChart          ; TYPE_CHART
+	dw IsntTheTimeMessage ; WING_CASE
 	dw GBCSounds          ; GBC_SOUNDS
 	dw BlueCard           ; BLUE_CARD
 	dw SquirtBottle       ; SQUIRTBOTTLE
 	dw IsntTheTimeMessage ; SILPHSCOPE2
 	dw IsntTheTimeMessage ; MYSTERY_EGG
-	dw IsntTheTimeMessage ; SECRETPOTION
-	dw IsntTheTimeMessage ; GO_GOGGLES
-	dw IsntTheTimeMessage ; RED_SCALE
 	dw CardKey            ; CARD_KEY
 	dw BasementKey        ; BASEMENT_KEY
 	dw IsntTheTimeMessage ; LOST_ITEM
@@ -307,14 +310,11 @@ KeyItemEffects:
 	dw IsntTheTimeMessage ; SILVER_WING
 	dw IsntTheTimeMessage ; CLEAR_BELL
 	dw IsntTheTimeMessage ; GS_BALL
-	dw IsntTheTimeMessage ; S_S_TICKET
+	dw IsntTheTimeMessage ; FERRY_PASS
 	dw IsntTheTimeMessage ; PASS
 	dw IsntTheTimeMessage ; ORANGETICKET
 	dw IsntTheTimeMessage ; MYSTICTICKET
 	dw IsntTheTimeMessage ; OLD_SEA_MAP
-	dw IsntTheTimeMessage ; HARSH_LURE
-	dw IsntTheTimeMessage ; POTENT_LURE
-	dw IsntTheTimeMessage ; MALIGN_LURE
 	dw IsntTheTimeMessage ; SHINY_CHARM
 	dw IsntTheTimeMessage ; OVAL_CHARM
 	dw IsntTheTimeMessage ; CATCH_CHARM
@@ -1383,12 +1383,6 @@ UseItem_SelectMon2:
 	pop hl
 	jr UseItem_DoSelectMon
 
-WingCase:
-	call FixPlayerEVsAndStats
-	ld b, PARTYMENUACTION_HEALING_ITEM ; also used for vitamins
-	ld hl, WingCase_MonSelected
-	jr UseItem_SelectMon_Loop
-
 RestoreHPEffect:
 	ld b, PARTYMENUACTION_HEALING_ITEM
 	ld hl, ItemRestoreHP
@@ -2202,9 +2196,6 @@ GBCSounds:
 	farcall MusicPlayer
 	jr _FinishFullscreenItem
 
-TypeChart:
-	call FadeToMenu
-	farcall _TypeChart
 _FinishFullscreenItem:
 	call ExitMenu
 	xor a
@@ -2212,6 +2203,38 @@ _FinishFullscreenItem:
 	farcall Pack_InitGFX
 	farcall WaitBGMap_DrawPackGFX
 	farjp Pack_InitColors
+
+SharpSickleEffect:
+	ld a, 1
+	ld [wUsingHMItem], a
+	call CutFunction
+	ret
+
+MachoGloveEffect:
+	ld a, 1
+	ld [wUsingHMItem], a
+	call StrengthFunction
+	ret
+
+MiningGearEffect:
+	ld a, 1
+	ld [wUsingHMItem], a
+	call RockSmashFunction
+	ret
+
+SurfBoardEffect:
+	ld a, 1
+	ld [wUsingHMItem], a
+	call SurfFunction
+	ret
+
+WearingShoesEffect:
+	ld hl, AlreadyWearingShoesText
+	call PrintText
+
+AlreadyWearingShoesText:
+	text_far _AlreadyWearingShoesText
+	text_end
 
 OldRod:
 	ld e, $0

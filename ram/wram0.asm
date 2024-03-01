@@ -1142,6 +1142,10 @@ wCardFlipWhichCard:: db
 ;wMemoryGameCardChoice:: db
 
 NEXTU
+; hm items
+wUsingHMItem:: db
+
+NEXTU
 ; magnet train
 wMagnetTrainOffset:: db
 wMagnetTrainPosition:: db

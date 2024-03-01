@@ -88,11 +88,7 @@ LakeOfRageAdvancedTipsSignText:
 
 	para "The Hidden Power"
 	line "move can take on"
-if DEF(FAITHFUL)
-	cont "any type, except"
-else
 	cont "any type, even"
-endc
 
 	para "the newly disco-"
 	line "vered Fairy type!"
@@ -244,7 +240,7 @@ LakeOfRageRedGyaradosScript:
 .Continue:
 	reloadmapafterbattle
 	opentext
-	givekeyitem RED_SCALE
+	givekeyitem POTION
 	waitsfx
 	writetext .RedScaleText
 	special ShowKeyItemIcon

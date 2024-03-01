@@ -26,7 +26,7 @@ CianwoodPharmacist:
 	opentext
 	writetext PharmacistGiveSecretpotionText
 	promptbutton
-	verbosegivekeyitem SECRETPOTION
+	verbosegivekeyitem POTION
 	setevent EVENT_GOT_SECRETPOTION_FROM_PHARMACY
 	writetext PharmacistDescribeSecretpotionText
 	waitbutton

@@ -61,7 +61,7 @@ endc
 MrPokemonsHouse_MrPokemonScript:
 	faceplayer
 	opentext
-	checkkeyitem RED_SCALE
+	checkkeyitem POTION
 	iftruefwd .RedScale
 	checkitem ODD_SOUVENIR
 	iftrue_jumpopenedtext MrPokemonText_OddSouvenir
@@ -87,7 +87,7 @@ MrPokemonsHouse_MrPokemonScript:
 	writetext MrPokemonText_SentToPC
 	promptbutton
 .in_party
-	takekeyitem RED_SCALE
+	takekeyitem POTION
 	setevent EVENT_TRADED_RED_SCALE
 	jumpopenedtext MrPokemonText_AlwaysNewDiscoveries
 

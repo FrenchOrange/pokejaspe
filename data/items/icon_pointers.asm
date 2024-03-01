@@ -260,6 +260,13 @@ ItemIconPointers:
 KeyItemIconPointers:
 	table_width 3, KeyItemIconPointers
 	dba NoItemIcon
+	dba SharpSickleIcon
+	dba MachoGloveIcon
+	dba MiningGearIcon
+	dba SurfBoardIcon
+	dba SportsShoesIcon
+	dba DadsParcelIcon
+	dba TravelTrunkIcon
 	dba BicycleIcon
 	dba OldRodIcon
 	dba GoodRodIcon
@@ -268,15 +275,11 @@ KeyItemIconPointers:
 	dba CoinCaseIcon
 	dba ApricornBoxIcon
 	dba WingCaseIcon
-	dba TypeChartIcon
 	dba GBCSoundsIcon
 	dba BlueCardIcon
 	dba SquirtBottleIcon
 	dba SilphScope2Icon
 	dba MysteryEggIcon
-	dba SecretPotionIcon
-	dba GoGogglesIcon
-	dba RedScaleIcon
 	dba CardKeyIcon
 	dba BasementKeyIcon
 	dba LostItemIcon
@@ -285,14 +288,11 @@ KeyItemIconPointers:
 	dba SilverWingIcon
 	dba ClearBellIcon
 	dba GSBallIcon
-	dba SSTicketIcon
+	dba FerryPassIcon
 	dba PassIcon
 	dba OrangeTicketIcon
 	dba MysticTicketIcon
 	dba OldSeaMapIcon
-	dba HarshLureIcon
-	dba PotentLureIcon
-	dba MalignLureIcon
 	dba ShinyCharmIcon
 	dba OvalCharmIcon
 	dba CatchCharmIcon

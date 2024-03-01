@@ -701,6 +701,27 @@ WingIcon:: INCBIN "gfx/items/wing.2bpp.lz"
 SECTION "ParkBallIcon", ROMX
 ParkBallIcon:: INCBIN "gfx/items/park_ball.2bpp.lz"
 
+SECTION "SharpSickleIcon", ROMX
+SharpSickleIcon:: INCBIN "gfx/items/bicycle.2bpp.lz"
+
+SECTION "MachoGloveIcon", ROMX
+MachoGloveIcon:: INCBIN "gfx/items/bicycle.2bpp.lz"
+
+SECTION "MiningGearIcon", ROMX
+MiningGearIcon:: INCBIN "gfx/items/bicycle.2bpp.lz"
+
+SECTION "SurfBoardIcon", ROMX
+SurfBoardIcon:: INCBIN "gfx/items/bicycle.2bpp.lz"
+
+SECTION "SportsShoesIcon", ROMX
+SportsShoesIcon:: INCBIN "gfx/items/bicycle.2bpp.lz"
+
+SECTION "DadsParcelIcon", ROMX
+DadsParcelIcon:: INCBIN "gfx/items/bicycle.2bpp.lz"
+
+SECTION "TravelTrunkIcon", ROMX
+TravelTrunkIcon:: INCBIN "gfx/items/bicycle.2bpp.lz"
+
 SECTION "BicycleIcon", ROMX
 BicycleIcon:: INCBIN "gfx/items/bicycle.2bpp.lz"
 
@@ -725,23 +746,14 @@ MysteryEggIcon:: INCBIN "gfx/items/mystery_egg.2bpp.lz"
 SECTION "SquirtBottleIcon", ROMX
 SquirtBottleIcon:: INCBIN "gfx/items/squirtbottle.2bpp.lz"
 
-SECTION "SecretPotionIcon", ROMX
-SecretPotionIcon:: INCBIN "gfx/items/secretpotion.2bpp.lz"
-
-SECTION "GoGogglesIcon", ROMX
-GoGogglesIcon:: INCBIN "gfx/items/go_goggles.2bpp.lz"
-
-SECTION "RedScaleIcon", ROMX
-RedScaleIcon:: INCBIN "gfx/items/red_scale.2bpp.lz"
-
 SECTION "CardKeyIcon", ROMX
 CardKeyIcon:: INCBIN "gfx/items/card_key.2bpp.lz"
 
 SECTION "BasementKeyIcon", ROMX
 BasementKeyIcon:: INCBIN "gfx/items/basement_key.2bpp.lz"
 
-SECTION "SSTicketIcon", ROMX
-SSTicketIcon:: INCBIN "gfx/items/s_s_ticket.2bpp.lz"
+SECTION "FerryPassIcon", ROMX
+FerryPassIcon:: INCBIN "gfx/items/ferry_pass.2bpp.lz"
 
 SECTION "PassIcon", ROMX
 PassIcon:: INCBIN "gfx/items/pass.2bpp.lz"
@@ -794,13 +806,5 @@ SilphScope2Icon:: INCBIN "gfx/items/silphscope2.2bpp.lz"
 SECTION "ApricornBoxIcon", ROMX
 ApricornBoxIcon:: INCBIN "gfx/items/apricorn_box.2bpp.lz"
 
-SECTION "TypeChartIcon", ROMX
-TypeChartIcon:: INCBIN "gfx/items/type_chart.2bpp.lz"
-
 SECTION "GBCSoundsIcon", ROMX
 GBCSoundsIcon:: INCBIN "gfx/items/gbc_sounds.2bpp.lz"
-
-SECTION "LureIcon", ROMX
-HarshLureIcon::
-PotentLureIcon::
-MalignLureIcon:: INCBIN "gfx/items/lure.2bpp.lz"

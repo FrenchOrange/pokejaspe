@@ -100,7 +100,7 @@ VermilionPortWalkUpToShipScript:
 	iffalsefwd VermilionPortNotRidingMoveAwayScript
 	writetext VermilionPortAskTicketText
 	promptbutton
-	checkkeyitem S_S_TICKET
+	checkkeyitem FERRY_PASS
 	iffalsefwd .NoTicket
 	writetext VermilionPortSSTicketText
 	waitbutton
@@ -159,7 +159,7 @@ VermilionPortSailorScript:
 	iffalse VermilionPortNotRidingScript
 	writetext VermilionPortAskTicketText
 	promptbutton
-	checkkeyitem S_S_TICKET
+	checkkeyitem FERRY_PASS
 	iffalsefwd .NoTicket
 	writetext VermilionPortSSTicketText
 	waitbutton
