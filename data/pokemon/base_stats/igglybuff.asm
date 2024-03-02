@@ -7,11 +7,7 @@
 	db NO_ITEM, NO_ITEM ; held items
 	dn GENDER_F75, HATCH_FASTER ; gender ratio, step cycles to hatch
 
-if DEF(FAITHFUL)
 	abilities_for IGGLYBUFF, CUTE_CHARM, COMPETITIVE, FRISK
-else
-	abilities_for IGGLYBUFF, CUTE_CHARM, COMPETITIVE, SOUNDPROOF
-endc
 	db GROWTH_FAST ; growth rate
 	dn EGG_NONE, EGG_NONE ; egg groups
 

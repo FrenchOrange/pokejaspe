@@ -627,13 +627,6 @@ TrainerWalkToPlayer:
 	jmp ComputePathToWalkToPlayer
 
 Special_SurfStartStep:
-	call InitMovementBuffer
-	call .GetMovementData
-	call AppendToMovementBuffer
-	ld a, movement_step_end
-	jmp AppendToMovementBuffer
-
-.GetMovementData:
 	ld a, [wPlayerDirection]
 	srl a
 	srl a
@@ -642,14 +635,16 @@ Special_SurfStartStep:
 	ld d, 0
 	ld hl, .movement_data
 	add hl, de
-	ld a, [hl]
-	ret
+	add hl, de
+	add hl, de
+	ld a, BANK(.movement_data)
+	jp StartAutoInput
 
 .movement_data
-	slow_step_down
-	slow_step_up
-	slow_step_left
-	slow_step_right
+	db D_DOWN,  0, -1
+	db D_UP,    0, -1
+	db D_LEFT,  0, -1
+	db D_RIGHT, 0, -1
 
 FollowNotExact::
 	push bc

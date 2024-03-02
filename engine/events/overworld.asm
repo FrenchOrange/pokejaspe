@@ -463,7 +463,6 @@ AutoSurfScript:
 	playmapmusic
 ; step into the water
 	special Special_SurfStartStep ; (slow_step_x, step_end)
-	applymovement PLAYER, wMovementBuffer ; PLAYER, MovementBuffer
 	end
 
 CantSurfText:

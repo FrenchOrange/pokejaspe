@@ -7,11 +7,7 @@
 	db NO_ITEM, NO_ITEM ; held items
 	dn GENDER_F12_5, HATCH_SLOWER ; gender ratio, step cycles to hatch
 
-if DEF(FAITHFUL)
 	abilities_for UMBREON, SYNCHRONIZE, SYNCHRONIZE, INNER_FOCUS
-else
-	abilities_for UMBREON, SYNCHRONIZE, MAGIC_GUARD, INNER_FOCUS
-endc
 	db GROWTH_MEDIUM_FAST ; growth rate
 	dn EGG_GROUND, EGG_GROUND ; egg groups
 

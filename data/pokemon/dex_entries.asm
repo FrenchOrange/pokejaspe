@@ -80,11 +80,7 @@ WartortlePokedexEntry::
 
 SECTION "BlastoisePokedexEntry", ROMX
 BlastoisePokedexEntry::
-if DEF(FAITHFUL)
 	db "Shellfish@"
-else
-	db "Shell@"
-endc
 	db   "It firmly plants"
 	next "its feet on the"
 	next "ground before"
@@ -794,11 +790,7 @@ SlowpokePlainPokedexEntry::
 
 SECTION "SlowbroPlainPokedexEntry", ROMX
 SlowbroPlainPokedexEntry::
-if DEF(FAITHFUL)
 	db "Hermit Crab@"
-else
-	db "Squatter@"
-endc
 	db   "An attached"
 	next "Shellder won't let"
 	next "go because of the"
@@ -3137,11 +3129,7 @@ SlowpokeGalarianPokedexEntry::
 
 SECTION "SlowbroGalarianPokedexEntry", ROMX
 SlowbroGalarianPokedexEntry::
-if DEF(FAITHFUL)
 	db "Hermit Crab@"
-else
-	db "Squatter@"
-endc
 	db   "A Shellder bite"
 	next "set off a chemical"
 	next "reaction with"

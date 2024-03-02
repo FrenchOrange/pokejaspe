@@ -1,16 +1,7 @@
-if DEF(FAITHFUL)
 	db  73,  95,  62,  85,  85,  65 ; 465 BST
 	;   hp  atk  def  spe  sat  sdf
-else
-	db  73, 100,  62,  85,  85,  65 ; 470 BST
-	;   hp  atk  def  spe  sat  sdf
-endc
 
-if DEF(FAITHFUL)
 	db NORMAL, NORMAL ; type
-else
-	db NORMAL, PSYCHIC ; type
-endc
 	db 45 ; catch rate
 	db 165 ; base exp
 	db NO_ITEM, NO_ITEM ; held items

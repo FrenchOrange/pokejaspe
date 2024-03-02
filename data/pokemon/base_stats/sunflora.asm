@@ -1,26 +1,9 @@
-if DEF(FAITHFUL)
 	db  75,  75,  55,  30, 105,  85 ; 425 BST
 	;   hp  atk  def  spe  sat  sdf
-else
-	db  75,  55,  75,  85, 105,  85 ; 480 BST
-	;   hp  atk  def  spe  sat  sdf
-endc
 
-if DEF(FAITHFUL)
 	db GRASS, GRASS ; type
-else
-	db GRASS, FIRE ; type
-endc
-if DEF(FAITHFUL)
 	db 120 ; catch rate
-else
-	db 110 ; catch rate
-endc
-if DEF(FAITHFUL)
 	db 146 ; base exp
-else
-	db 156 ; base exp
-endc
 	db NO_ITEM, NO_ITEM ; held items
 	dn GENDER_F50, HATCH_MEDIUM_FAST ; gender ratio, step cycles to hatch
 

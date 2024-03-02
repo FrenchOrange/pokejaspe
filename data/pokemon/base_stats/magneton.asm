@@ -7,11 +7,7 @@
 	db NO_ITEM, METAL_COAT ; held items
 	dn GENDER_UNKNOWN, HATCH_MEDIUM_FAST ; gender ratio, step cycles to hatch
 
-if DEF(FAITHFUL)
 	abilities_for MAGNETON, MAGNET_PULL, STURDY, ANALYTIC
-else
-	abilities_for MAGNETON, MAGNET_PULL, LEVITATE, ANALYTIC
-endc
 	db GROWTH_MEDIUM_FAST ; growth rate
 	dn EGG_MINERAL, EGG_MINERAL ; egg groups
 

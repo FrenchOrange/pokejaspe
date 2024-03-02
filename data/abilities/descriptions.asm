@@ -653,11 +653,7 @@ SnowWarningDescription:
 
 HoneyGatherDescription:
 	text  "The #mon may"
-if DEF(FAITHFUL)
 	next1 "gather Honey."
-else
-	next1 "find Sweet Honey."
-endc
 	done
 
 FriskDescription:

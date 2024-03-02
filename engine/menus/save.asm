@@ -130,6 +130,11 @@ CompareLoadedAndSavedPlayerID:
 	jmp PopBCDEHL
 
 SavedTheGame:
+	ld hl, .saving_text
+	call PrintText
+	ld c, 40
+	call DelayFrames
+
 	call SaveGameData
 	call SaveCurrentVersion
 	; <PLAYER> saved the game!
@@ -138,6 +143,10 @@ SavedTheGame:
 	ld de, SFX_SAVE
 	call WaitPlaySFX
 	jmp WaitSFX
+
+.saving_text
+	text "Saving…"
+	done
 
 SaveGameData::
 	ldh a, [hVBlank]

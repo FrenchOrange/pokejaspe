@@ -71,12 +71,6 @@ Mineral:      db "Mineral@"
 Amorphous:    db "Amorphous@"
 Ditto:        db "Ditto@"
 Undiscovered: db "Undiscovered@"
-if !DEF(FAITHFUL)
-Water1:       db "Amphibian@"
-Water2:       db "Fish@"
-Water3:       db "Invertebrate@"
-else
 Water1:       db "Water 1@"
 Water2:       db "Water 2@"
 Water3:       db "Water 3@"
-endc

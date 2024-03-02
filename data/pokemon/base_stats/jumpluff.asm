@@ -1,10 +1,5 @@
-if DEF(FAITHFUL)
 	db  75,  55,  70, 110,  55,  95 ; 460 BST
 	;   hp  atk  def  spe  sat  sdf
-else
-	db  95,  55,  70, 110,  55,  95 ; 480 BST
-	;   hp  atk  def  spe  sat  sdf
-endc
 
 	db GRASS, FLYING ; type
 	db 45 ; catch rate

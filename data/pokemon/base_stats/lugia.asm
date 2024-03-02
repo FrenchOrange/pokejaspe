@@ -1,21 +1,13 @@
 	db 106,  90, 130, 110,  90, 154 ; 680 BST
 	;   hp  atk  def  spe  sat  sdf
 
-if DEF(FAITHFUL)
 	db PSYCHIC, FLYING ; type
-else
-	db WATER, FLYING ; type
-endc
 	db 3 ; catch rate
 	db 220 ; base exp
 	db ALWAYS_ITEM_2, LUM_BERRY ; held items
 	dn GENDER_UNKNOWN, HATCH_UNKNOWN ; gender ratio, step cycles to hatch
 
-if DEF(FAITHFUL)
 	abilities_for LUGIA, PRESSURE, PRESSURE, MULTISCALE
-else
-	abilities_for LUGIA, PRESSURE, DRIZZLE, MULTISCALE
-endc
 	db GROWTH_SLOW ; growth rate
 	dn EGG_NONE, EGG_NONE ; egg groups
 
