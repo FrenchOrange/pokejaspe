@@ -1149,13 +1149,8 @@ Bug_catcherWayneBeatenText:
 
 IlexForestHoneyBoyText:
 	text "I'm slathering"
-if DEF(FAITHFUL)
 	line "Honey on the"
 	cont "ground."
-else
-	line "Sweet Honey"
-	cont "on the ground."
-endc
 
 	para "My sister's #-"
 	line "mon collects it."

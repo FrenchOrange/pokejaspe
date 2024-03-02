@@ -1,10 +1,5 @@
-if DEF(FAITHFUL)
 	db 105, 130, 120,  40,  45,  45 ; 485 BST
 	;   hp  atk  def  spe  sat  sdf
-else
-	db 110, 130, 120,  40,  45,  50 ; 495 BST
-	;   hp  atk  def  spe  sat  sdf
-endc
 
 	db GROUND, ROCK ; type
 	db 60 ; catch rate
@@ -12,11 +7,7 @@ endc
 	db NO_ITEM, PROTECTOR ; held items
 	dn GENDER_F50, HATCH_MEDIUM_FAST ; gender ratio, step cycles to hatch
 
-if DEF(FAITHFUL)
 	abilities_for RHYDON, LIGHTNING_ROD, ROCK_HEAD, RECKLESS
-else
-	abilities_for RHYDON, ROCK_HEAD, SOLID_ROCK, RECKLESS
-endc
 	db GROWTH_SLOW ; growth rate
 	dn EGG_MONSTER, EGG_GROUND ; egg groups
 

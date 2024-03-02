@@ -383,11 +383,7 @@ TinTower1FSage1Text:
 	done
 
 TinTower1FSage2Text:
-if DEF(FAITHFUL)
 	text "When the Brass"
-else
-	text "When the Gong"
-endc
 	line "Tower burned down,"
 
 	para "three nameless"

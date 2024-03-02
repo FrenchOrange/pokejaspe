@@ -90,8 +90,8 @@ BSODPalette:
 INCLUDE "gfx/splash/bsod.pal"
 
 BSODMessage:
-	text  "      #mon"
-	next1 " Polished Crystal"
+	text  " "
+	next1 "  #mon Jasper"
 	next  "       ERROR"
 	next1 "------------------"
 	next  "Please report this"
@@ -102,8 +102,8 @@ BSODMessage:
 	done
 
 VBABSODMessage:
-	text  "      #mon"
-	next1 " Polished Crystal"
+	text  " "
+	next1 "  #mon Jasper"
 	next  "       ERROR"
 	next1 "------------------"
 	next  "Please use a more"

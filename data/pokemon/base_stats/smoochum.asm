@@ -7,11 +7,7 @@
 	db ALWAYS_ITEM_2, ASPEAR_BERRY ; items
 	dn GENDER_F100, HATCH_MEDIUM_SLOW ; gender ratio, step cycles to hatch
 
-if DEF(FAITHFUL)
 	abilities_for SMOOCHUM, OBLIVIOUS, FOREWARN, HYDRATION
-else
-	abilities_for SMOOCHUM, OBLIVIOUS, FILTER, HYDRATION
-endc
 	db GROWTH_MEDIUM_FAST ; growth rate
 	dn EGG_NONE, EGG_NONE ; egg groups
 

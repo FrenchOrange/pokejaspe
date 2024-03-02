@@ -49,10 +49,6 @@ ENDM
 	add_tm PSYCHIC      ; $1c
 	add_tm SHADOW_BALL  ; $1d
 	add_tm ROCK_SMASH   ; $1e
-if !DEF(FAITHFUL)
-DEF TM_BRICK_BREAK    EQU TM_ROCK_SMASH
-DEF BRICK_BREAK_TMNUM EQU ROCK_SMASH_TMNUM
-endc
 	add_tm DOUBLE_TEAM  ; $1f
 	add_tm REFLECT      ; $20
 	add_tm FLASH_CANNON ; $21

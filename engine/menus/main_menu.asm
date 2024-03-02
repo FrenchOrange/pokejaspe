@@ -158,10 +158,6 @@ MainMenu_PrintCurrentTimeAndDay:
 	and $80
 	jr nz, .PrintTimeNotSet
 
-;; kroc - NoRTC patch
-;; to get the main menu to show the correct time of the save,
-;; we need to pull the backed-up RTC time from the save file
-if DEF(NO_RTC)
 	ld a, BANK(sPlayerData)
 	call GetSRAMBank
 	ld hl, sPlayerData + wRTCDayHi - wPlayerData
@@ -169,7 +165,6 @@ if DEF(NO_RTC)
 	ld bc, 5
 	rst CopyBytes
 	call CloseSRAM
-endc
 
 	call UpdateTime
 	bccoord 1, 15

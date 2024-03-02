@@ -173,11 +173,6 @@ MomScript:
 	sjump MomEventScript
 
 MomIntroText:
-if DEF(DEBUG)
-	text "Don't forget to use"
-	line "your debug radio!"
-	done
-else
 	text "Oh, <PLAYER>!"
 	line "You're awake."
 
@@ -198,7 +193,6 @@ else
 
 	para "Here you go!"
 	done
-endc
 
 MomPokegearText:
 	text "#mon Gear, or"

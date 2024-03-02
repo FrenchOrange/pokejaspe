@@ -7,11 +7,7 @@
 	db NO_ITEM, NO_ITEM ; held items
 	dn GENDER_F50, HATCH_FAST ; gender ratio, step cycles to hatch
 
-if DEF(FAITHFUL)
 	abilities_for ZUBAT, INNER_FOCUS, INNER_FOCUS, INFILTRATOR
-else
-	abilities_for ZUBAT, INNER_FOCUS, ANTICIPATION, INFILTRATOR
-endc
 	db GROWTH_MEDIUM_FAST ; growth rate
 	dn EGG_FLYING, EGG_FLYING ; egg groups
 

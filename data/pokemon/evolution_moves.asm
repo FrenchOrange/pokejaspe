@@ -191,11 +191,7 @@ EvolutionMoves::
 	db NO_MOVE      ; JUMPLUFF
 	db NO_MOVE      ; AIPOM
 	db NO_MOVE      ; SUNKERN
-if DEF(FAITHFUL)
 	db NO_MOVE      ; SUNFLORA
-else
-	db EMBER        ; SUNFLORA
-endc
 	db NO_MOVE      ; YANMA
 	db NO_MOVE      ; WOOPER
 	db ANCIENTPOWER ; QUAGSIRE

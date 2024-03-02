@@ -69,11 +69,7 @@ ItemNames::
 	li "Soda Pop"
 	li "Lemonade"
 	li "Moomoo Milk"
-if DEF(FAITHFUL)
 	li "RageCandyBar"
-else
-	li "Cake of Rage"
-endc
 	li "PewterCrunch"
 
 	li "EnergyPowder"
@@ -132,11 +128,7 @@ endc
 
 	li "Mulch"
 
-if DEF(FAITHFUL)
 	li "Honey"
-else
-	li "Sweet Honey"
-endc
 
 	li "X Attack"
 	li "X Defend"
@@ -145,11 +137,7 @@ endc
 	li "X Sp.Def"
 	li "X Accuracy"
 	li "Dire Hit"
-if DEF(FAITHFUL)
 	li "Guard Spec."
-else
-	li "Guard Stats"
-endc
 
 	li "Ability Cap"
 	li "AbilityPatch"

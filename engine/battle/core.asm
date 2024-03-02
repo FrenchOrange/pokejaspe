@@ -4538,11 +4538,9 @@ UserCanSwitch:
 	ld a, b
 	cp HELD_SHED_SHELL
 	ret z
-if !DEF(FAITHFUL)
 	call GetTrueUserAbility
 	cp RUN_AWAY
 	ret z
-endc
 	call CheckIfUserIsGhostType
 	ret z
 	farcall CheckIfTrappedByAbility
@@ -5883,17 +5881,8 @@ LoadEnemyWildmon:
 	call GetLeadAbility
 	cp SUPER_LUCK
 	jr z, .compound_eyes
-if DEF(FAITHFUL)
 	cp COMPOUND_EYES
 	jr nz, .no_compound_eyes_or_amulet_coin
-else
-	cp COMPOUND_EYES
-	jr z, .compound_eyes
-	; If the party lead holds an Amulet Coin, chances are increased
-	ld a, [wPartyMon1Item]
-	cp AMULET_COIN
-	jr nz, .no_compound_eyes_or_amulet_coin
-endc
 
 .compound_eyes:
 	; 60% chance of getting Item1

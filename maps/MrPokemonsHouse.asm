@@ -44,7 +44,6 @@ MrPokemonsHouseTrigger0:
 	verbosegivekeyitem MYSTERY_EGG
 	setevent EVENT_GOT_MYSTERY_EGG_FROM_MR_POKEMON
 	blackoutmod CHERRYGROVE_CITY
-if !DEF(DEBUG)
 	writetext MrPokemonIntroText3
 	promptbutton
 	turnobject MRPOKEMONSHOUSE_GENTLEMAN, RIGHT
@@ -54,7 +53,6 @@ if !DEF(DEBUG)
 	turnobject MRPOKEMONSHOUSE_OAK, LEFT
 	writetext MrPokemonIntroText5
 	waitbutton
-endc
 	closetext
 	sjumpfwd MrPokemonsHouse_OakScript
 
@@ -276,7 +274,6 @@ MrPokemonsHouse_OakText1:
 	text "Oak: Aha! So"
 	line "you're <PLAYER>!"
 
-if !DEF(DEBUG)
 	para "I'm Oak! A #mon"
 	line "researcher."
 
@@ -335,7 +332,6 @@ if !DEF(DEBUG)
 
 	para "It's a hi-tech"
 	line "encyclopedia!"
-endc
 	done
 
 MrPokemonsHouse_GetDexText:
@@ -350,7 +346,6 @@ MrPokemonsHouse_OakText2:
 	para "complete that"
 	line "#dex!"
 
-if !DEF(DEBUG)
 	para "But I've stayed"
 	line "too long."
 
@@ -360,7 +355,6 @@ if !DEF(DEBUG)
 
 	para "<PLAYER>, I'm"
 	line "counting on you!"
-endc
 	done
 
 MrPokemonText_GimmeTheScale:

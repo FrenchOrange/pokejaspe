@@ -444,11 +444,10 @@ PlayRoughDescription:
 	done
 
 RockSmashDescription:
-if !DEF(FAITHFUL)
 	text "Removes Reflect"
 	next "and Light Screen."
 	done
-endc
+
 CrunchDescription:
 IronTailDescription:
 	text "An attack that may"

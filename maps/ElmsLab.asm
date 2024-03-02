@@ -97,7 +97,6 @@ ElmsLab_RefuseLoop:
 	sjump ElmsLab_RefuseLoop
 
 ElmsLab_ElmGetsEmail:
-if !DEF(DEBUG)
 	writetext ElmText_Accepted
 	promptbutton
 	writetext ElmText_ResearchAmbitions
@@ -112,7 +111,6 @@ if !DEF(DEBUG)
 	turnobject ELMSLAB_ELM, RIGHT
 	writetext ElmText_MissionFromMrPokemon
 	waitbutton
-endc
 	closetext
 	applyonemovement ELMSLAB_ELM, step_up
 	turnobject PLAYER, UP
@@ -316,9 +314,7 @@ ChikoritaPokeBallScript:
 
 ElmDirectionsScript:
 	turnobject PLAYER, UP
-if !DEF(DEBUG)
 	showtext ElmDirectionsText1
-endc
 	addcellnum PHONE_ELM
 	opentext
 	writetext GotElmsNumberText
@@ -895,7 +891,6 @@ ElmText_Intro:
 	text "Elm: <PLAYER>!"
 	line "There you are!"
 
-if !DEF(DEBUG)
 	para "Hello to you too,"
 	line "Lyra."
 
@@ -923,7 +918,6 @@ if !DEF(DEBUG)
 
 	para "that I recently"
 	line "caught."
-endc
 	done
 
 ElmText_Accepted:
@@ -1156,7 +1150,6 @@ ElmAfterTheftText4:
 ElmAfterTheftText5:
 	text "Elm: What?!"
 
-if !DEF(DEBUG)
 	para "Prof.Oak gave you"
 	line "a #dex?"
 
@@ -1186,7 +1179,6 @@ if !DEF(DEBUG)
 	para "The closest Gym"
 	line "would be the one"
 	cont "in Violet City."
-endc
 	done
 
 ElmAfterTheftText6:

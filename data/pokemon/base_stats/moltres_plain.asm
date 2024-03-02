@@ -7,11 +7,7 @@
 	db ALWAYS_ITEM_2, LUM_BERRY ; held items
 	dn GENDER_UNKNOWN, HATCH_UNKNOWN ; gender ratio, step cycles to hatch
 
-if DEF(FAITHFUL)
 	abilities_for MOLTRES, PRESSURE, PRESSURE, FLAME_BODY
-else
-	abilities_for MOLTRES, PRESSURE, DROUGHT, FLAME_BODY
-endc
 	db GROWTH_SLOW ; growth rate
 	dn EGG_NONE, EGG_NONE ; egg groups
 

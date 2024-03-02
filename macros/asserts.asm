@@ -96,7 +96,5 @@ ENDM
 
 MACRO jmp
 	jp \#
-	if DEF(DEBUG)
 		assert warn, (\<_NARG>) - @ > 127 || (\<_NARG>) - @ < -129, "jp can be jr"
-	endc
 ENDM

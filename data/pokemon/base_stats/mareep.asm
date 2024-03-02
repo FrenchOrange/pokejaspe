@@ -7,11 +7,7 @@
 	db NO_ITEM, NO_ITEM ; held items
 	dn GENDER_F50, HATCH_MEDIUM_FAST ; gender ratio, step cycles to hatch
 
-if DEF(FAITHFUL)
 	abilities_for MAREEP, STATIC, STATIC, STATIC
-else
-	abilities_for MAREEP, STATIC, STATIC, MOTOR_DRIVE
-endc
 	db GROWTH_MEDIUM_SLOW ; growth rate
 	dn EGG_MONSTER, EGG_GROUND ; egg groups
 

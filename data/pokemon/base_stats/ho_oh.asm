@@ -7,11 +7,7 @@
 	db ALWAYS_ITEM_2, SACRED_ASH ; held items
 	dn GENDER_UNKNOWN, HATCH_UNKNOWN ; gender ratio, step cycles to hatch
 
-if DEF(FAITHFUL)
 	abilities_for HO_OH, PRESSURE, PRESSURE, REGENERATOR
-else
-	abilities_for HO_OH, PRESSURE, DROUGHT, REGENERATOR
-endc
 	db GROWTH_SLOW ; growth rate
 	dn EGG_NONE, EGG_NONE ; egg groups
 

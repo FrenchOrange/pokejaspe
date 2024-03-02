@@ -159,9 +159,6 @@ _AIChooseMove:
 
 	ld a, c
 	cp 16 ; up to 16 scoring layers
-if DEF(DEBUG)
-	jr z, .DebugAndDecrement
-endc
 	jr z, .DecrementScores
 
 	push bc
@@ -228,10 +225,6 @@ endc
 	db -1
 
 ; Decrement the scores of all moves one by one until one reaches 0.
-if DEF(DEBUG)
-.DebugAndDecrement:
-	call AIDebug
-endc
 .DecrementScores:
 	ld hl, wAIMoveScore
 	ld de, wAIMoves
@@ -343,91 +336,3 @@ AIScoringPointers:
 	fardw DoNothing
 	fardw DoNothing
 	assert_table_length 16
-
-if DEF(DEBUG)
-AIDebug:
-; Prints out an AI score table and delays
-	push hl
-	push de
-	push bc
-
-	; Clear the text display
-	hlcoord 1, 13
-	push hl
-	ld c, 4
-	ld a, " "
-.clear_loop
-	ld b, 18
-.clear_row
-	ld [hli], a
-	dec b
-	jr nz, .clear_row
-	inc hl
-	inc hl
-	dec c
-	jr nz, .clear_loop
-
-	; Print move names
-	pop hl
-	ld de, wAIMoves
-	ld c, 4
-.move_loop
-	push de
-	push bc
-	ld [hl], "-"
-	ld a, [de]
-	inc de
-	and a
-	jr z, .get_score
-	ld [wNamedObjectIndex], a
-	push hl
-	call GetMoveName
-	pop hl
-	push hl
-	ld de, wStringBuffer1
-	rst PlaceString
-	pop hl
-.get_score
-	ld bc, MOVE_NAME_LENGTH
-	add hl, bc
-	pop bc
-	push bc
-	ld de, wAIMoveScore - 1
-	ld a, 5
-.score_target
-	inc de
-	dec a
-	cp c
-	jr nz, .score_target
-
-	lb bc, 1, 3
-	push hl
-	call PrintNum
-	pop hl
-	ld bc, SCREEN_WIDTH - MOVE_NAME_LENGTH
-	add hl, bc
-	pop bc
-	pop de
-	inc de
-	dec c
-	jr nz, .move_loop
-
-	pop bc
-	push bc
-	hlcoord 18, 13
-	ld a, c
-	cp 10
-	jr c, .numeric
-	add "A" - "0" - 10
-.numeric
-	add "0"
-	ld [hl], a
-
-	call ApplyTilemap
-	ld c, 30
-	call DelayFrames
-	pop bc
-	pop de
-	pop hl
-	ret
-endc

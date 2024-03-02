@@ -7,11 +7,7 @@
 	db NO_ITEM, NO_ITEM ; held items
 	dn GENDER_F100, HATCH_MEDIUM_FAST ; gender ratio, step cycles to hatch
 
-if DEF(FAITHFUL)
 	abilities_for KANGASKHAN, EARLY_BIRD, SCRAPPY, INNER_FOCUS
-else
-	abilities_for KANGASKHAN, EARLY_BIRD, SCRAPPY, PARENTAL_BOND
-endc
 	db GROWTH_MEDIUM_FAST ; growth rate
 	dn EGG_MONSTER, EGG_MONSTER ; egg groups
 

@@ -1,10 +1,5 @@
-if DEF(FAITHFUL)
 	db  70,  65,  60,  90,  90,  75 ; 450 BST
 	;   hp  atk  def  spe  sat  sdf
-else
-	db  70,  65,  60,  90, 115,  75 ; 475 BST
-	;   hp  atk  def  spe  sat  sdf
-endc
 
 	db BUG, POISON ; type
 	db 75 ; catch rate

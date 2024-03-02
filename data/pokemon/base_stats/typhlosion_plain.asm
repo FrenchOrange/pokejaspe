@@ -1,21 +1,13 @@
 	db  78,  84,  78, 100, 109,  85 ; 534 BST
 	;   hp  atk  def  spe  sat  sdf
 
-if DEF(FAITHFUL)
 	db FIRE, FIRE ; type
-else
-	db FIRE, GROUND ; type
-endc
 	db 45 ; catch rate
 	db 209 ; base exp
 	db NO_ITEM, NO_ITEM ; held items
 	dn GENDER_F12_5, HATCH_MEDIUM_FAST ; gender ratio, step cycles to hatch
 
-if DEF(FAITHFUL)
 	abilities_for TYPHLOSION, BLAZE, BLAZE, FLASH_FIRE
-else
-	abilities_for TYPHLOSION, BLAZE, FLAME_BODY, FLASH_FIRE
-endc
 	db GROWTH_MEDIUM_SLOW ; growth rate
 	dn EGG_GROUND, EGG_GROUND ; egg groups
 

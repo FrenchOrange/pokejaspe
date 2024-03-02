@@ -1791,12 +1791,10 @@ BattleCommand_damagevariation:
 	ret c
 
 .go
-if DEF(DEBUG)
 	push hl
 	ld hl, DealtXDamageText
 	call StdBattleTextbox
 	pop hl
-endc
 
 	; Start with the current (100%) damage.
 	xor a
@@ -3715,7 +3713,6 @@ RaiseStatWithItem:
 
 DittoMetalPowder:
 	assert !HIGH(DITTO)
-if !DEF(FAITHFUL)
 	; grabs true species -- works even if transformed to non-Ditto
 	ld a, MON_FORM
 	call OpponentPartyAttr
@@ -3723,17 +3720,6 @@ if !DEF(FAITHFUL)
 	ret nz
 	ld a, MON_SPECIES
 	call OpponentPartyAttr
-else
-	; only works if current species is Ditto
-	ld hl, wBattleMonForm
-	call GetOpponentMonAttr
-	ld a, [hl]
-	and EXTSPECIES_MASK
-	ret nz
-	ld hl, wBattleMonSpecies
-	call GetOpponentMonAttr
-	ld a, [hl]
-endc
 	cp DITTO
 	ret nz
 

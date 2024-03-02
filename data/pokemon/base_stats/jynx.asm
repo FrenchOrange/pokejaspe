@@ -1,10 +1,5 @@
-if DEF(FAITHFUL)
 	db  65,  50,  35,  95, 115,  95 ; 455 BST
 	;   hp  atk  def  spe  sat  sdf
-else
-	db  70,  60,  40,  95, 120, 100 ; 485 BST
-	;   hp  atk  def  spe  sat  sdf
-endc
 
 	db ICE, PSYCHIC ; type
 	db 45 ; catch rate
@@ -12,11 +7,7 @@ endc
 	db RAWST_BERRY, RAWST_BERRY ; held items
 	dn GENDER_F100, HATCH_MEDIUM_SLOW ; gender ratio, step cycles to hatch
 
-if DEF(FAITHFUL)
 	abilities_for JYNX, OBLIVIOUS, FOREWARN, DRY_SKIN
-else
-	abilities_for JYNX, OBLIVIOUS, FILTER, DRY_SKIN
-endc
 	db GROWTH_MEDIUM_FAST ; growth rate
 	dn EGG_HUMANSHAPE, EGG_HUMANSHAPE ; egg groups
 

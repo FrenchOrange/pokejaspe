@@ -1,21 +1,13 @@
 	db  80,  82, 100,  80,  83, 100 ; 525 BST
 	;   hp  atk  def  spe  sat  sdf
 
-if DEF(FAITHFUL)
 	db GRASS, GRASS ; type
-else
-	db GRASS, FAIRY ; type
-endc
 	db 45 ; catch rate
 	db 208 ; base exp
 	db NO_ITEM, NO_ITEM ; held items
 	dn GENDER_F12_5, HATCH_MEDIUM_FAST ; gender ratio, step cycles to hatch
 
-if DEF(FAITHFUL)
 	abilities_for MEGANIUM, OVERGROW, OVERGROW, LEAF_GUARD
-else
-	abilities_for MEGANIUM, OVERGROW, NATURAL_CURE, LEAF_GUARD
-endc
 	db GROWTH_MEDIUM_SLOW ; growth rate
 	dn EGG_MONSTER, EGG_PLANT ; egg groups
 

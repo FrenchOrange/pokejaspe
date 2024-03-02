@@ -58,16 +58,6 @@ UpdateGameTimer::
 	xor a
 	ld [hl], a
 
-; kroc - no-RTC patch
-; the game timer has increased by 1 second; increase the "fake" RTC by 6 seconds
-; (24 in-game hours will pass in 4 real-world hours)
-; this does not affect the rate of the "hours played", which remains real-time
-if DEF(NO_RTC)
-rept NO_RTC_SPEEDUP
-	call UpdateNoRTC
-endr
-endc
-
 ; +1 second
 	ld hl, wGameTimeSeconds
 	ld a, [hl]
@@ -128,41 +118,3 @@ endc
 	ld a, l
 	ld [wGameTimeHours + 1], a
 	ret
-
-;; add a second to the no-RTC fake real-time clock
-if DEF(NO_RTC)
-UpdateNoRTC::
-	; set our modulus
-	ld a, 60
-	ld b, a
-
-	ld hl, wRTCSeconds
-
-; +1 second
-	inc [hl]
-	sub [hl]
-	ret nz
-	ld [hld], a
-
-; +1 minute
-	ld a, b
-	inc [hl]
-	sub [hl]
-	ret nz
-	ld [hld], a
-
-; +1 hour
-	ld a, 24
-	inc [hl]
-	sub [hl]
-	ret nz
-	ld [hld], a
-
-; We do not need to check for days overflow! Pokémon Crystal always keeps the
-; RTC within a 140 day loop (see time.asm/FixDays)!
-; Since the no-RTC patch is not running the clock when the GameBoy is off,
-; it is not possible for the clock to stray beyond 140 days, let alone the
-; RTC hardware limit of 512 days!
-	inc [hl]
-	ret
-endc

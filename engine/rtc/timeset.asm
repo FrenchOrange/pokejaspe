@@ -26,10 +26,8 @@ InitClock:
 	call SetPalettes
 	ld c, 10
 	call DelayFrames
-if !DEF(DEBUG)
 	ld hl, Text_WokeUpOak
 	call PrintText
-endc
 	ld hl, wTimeSetBuffer
 	ld bc, 50
 	xor a

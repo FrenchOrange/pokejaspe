@@ -3251,8 +3251,7 @@ _MayRegisterItemText::
 SECTION "_InitialOptionsText", ROMX
 _InitialOptionsText::
 	text "Please choose how"
-	line "you want to play"
-	cont "Polished Crystal."
+	line "you want to play."
 	prompt
 
 SECTION "_ElmText1", ROMX
@@ -3260,7 +3259,6 @@ _ElmText1::
 	text "Hello! Sorry to"
 	line "keep you waiting!"
 
-if !DEF(DEBUG)
 	para "Welcome to the"
 	line "world of #mon!"
 
@@ -3268,7 +3266,6 @@ if !DEF(DEBUG)
 
 	para "People call me the"
 	line "#mon Prof."
-endc
 	prompt
 
 SECTION "_ElmText2", ROMX
@@ -3317,7 +3314,6 @@ _ElmText7::
 	text "<PLAYER>, are you"
 	line "ready?"
 
-if !DEF(DEBUG)
 	para "Your very own"
 	line "#mon story is"
 	cont "about to unfold."
@@ -3331,7 +3327,6 @@ if !DEF(DEBUG)
 
 	para "with #mon"
 	line "awaits! Let's go!"
-endc
 
 	para "I'll be seeing you"
 	line "later!"
@@ -3339,14 +3334,13 @@ endc
 
 SECTION "_WarnVBAText", ROMX
 _WarnVBAText::
-if !DEF(DEBUG)
 	text "Warning!"
 
 	para "This Game Boy"
 	line "emulator has bugs"
 
 	para "that may crash"
-	line "Polished Crystal."
+	line "this game."
 
 	para "Please use a more"
 	line "accurate emulator,"
@@ -3354,11 +3348,6 @@ if !DEF(DEBUG)
 	para "such as BGB, mGBA,"
 	line "or Gambatte."
 	prompt
-else
-	text "Emulator test"
-	line "failed."
-	prompt
-endc
 
 SECTION "_ClockTimeMayBeWrongText", ROMX
 _ClockTimeMayBeWrongText::

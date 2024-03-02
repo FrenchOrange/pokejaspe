@@ -255,9 +255,7 @@
 	const SHADOW_BALL  ; $f7
 	const FUTURE_SIGHT ; $f8
 	const ROCK_SMASH   ; $f9
-if !DEF(FAITHFUL)
 DEF BRICK_BREAK EQU ROCK_SMASH
-endc
 	const WHIRLPOOL    ; $fa
 	const DARK_PULSE   ; $fb
 	const MOONBLAST    ; $fc

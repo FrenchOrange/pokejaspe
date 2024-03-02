@@ -7,11 +7,7 @@
 	db GRIP_CLAW, QUICK_CLAW ; held items
 	dn GENDER_F50, HATCH_MEDIUM_FAST ; gender ratio, step cycles to hatch
 
-if DEF(FAITHFUL)
 	abilities_for WEAVILE, PRESSURE, PRESSURE, PICKPOCKET
-else
-	abilities_for WEAVILE, PRESSURE, TECHNICIAN, PICKPOCKET
-endc
 	db GROWTH_MEDIUM_SLOW ; growth rate
 	dn EGG_GROUND, EGG_GROUND ; egg groups
 

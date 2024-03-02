@@ -1,16 +1,7 @@
-if DEF(FAITHFUL)
 	db 115, 140, 130,  40,  55,  55 ; 535 BST
 	;   hp  atk  def  spe  sat  sdf
-else
-	db 120, 140, 130,  40,  55,  60 ; 545 BST
-	;   hp  atk  def  spe  sat  sdf
-endc
 
-if DEF(FAITHFUL)
 	db GROUND, ROCK ; type
-else
-	db STEEL, ROCK ; type
-endc
 	db 30 ; catch rate
 	db 217 ; base exp
 	db NO_ITEM, NO_ITEM ; held items

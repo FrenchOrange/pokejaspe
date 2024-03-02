@@ -7,11 +7,7 @@
 	db ORAN_BERRY, ORAN_BERRY ; held items
 	dn GENDER_F75, HATCH_FASTER ; gender ratio, step cycles to hatch
 
-if DEF(FAITHFUL)
 	abilities_for JIGGLYPUFF, CUTE_CHARM, COMPETITIVE, FRISK
-else
-	abilities_for JIGGLYPUFF, CUTE_CHARM, COMPETITIVE, SOUNDPROOF
-endc
 	db GROWTH_FAST ; growth rate
 	dn EGG_FAIRY, EGG_FAIRY ; egg groups
 

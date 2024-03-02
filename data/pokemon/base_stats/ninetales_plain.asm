@@ -1,21 +1,13 @@
 	db  73,  76,  75, 100,  81, 100 ; 505 BST
 	;   hp  atk  def  spe  sat  sdf
 
-if DEF(FAITHFUL)
 	db FIRE, FIRE ; type
-else
-	db FIRE, GHOST ; type
-endc
 	db 75 ; catch rate
 	db 178 ; base exp
 	db ALWAYS_ITEM_2, ASPEAR_BERRY ; held items
 	dn GENDER_F75, HATCH_MEDIUM_FAST ; gender ratio, step cycles to hatch
 
-if DEF(FAITHFUL)
 	abilities_for NINETALES, FLASH_FIRE, FLASH_FIRE, DROUGHT
-else
-	abilities_for NINETALES, FLASH_FIRE, FOREWARN, DROUGHT
-endc
 	db GROWTH_MEDIUM_FAST ; growth rate
 	dn EGG_GROUND, EGG_GROUND ; egg groups
 

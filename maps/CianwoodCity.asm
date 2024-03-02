@@ -187,13 +187,8 @@ CianwoodCityPokefanMText:
 	line "something."
 
 	para "Your #mon could"
-if DEF(FAITHFUL)
 	line "use Rock Smash to"
 	cont "break them."
-else
-	line "use Brick Break"
-	cont "to smash them."
-endc
 	done
 
 CianwoodCityLassText:

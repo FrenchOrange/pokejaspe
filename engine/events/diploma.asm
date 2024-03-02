@@ -34,7 +34,7 @@ _Diploma:
 	ld hl, DiplomaPage2Tilemap
 	decoord 0, 0
 	call Decompress
-	ld de, .PolishedCrystal
+	ld de, .PokemonJasper
 	hlcoord 2, 1
 	rst PlaceString
 	ld de, .PlayTime
@@ -67,8 +67,8 @@ _Diploma:
 	text "Play Time"
 	done
 
-.PolishedCrystal:
-	text "Polished Crystal"
+.PokemonJasper:
+	text "#mon Jasper"
 	done
 
 DiplomaGFX:

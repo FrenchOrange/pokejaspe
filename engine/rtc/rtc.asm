@@ -31,8 +31,6 @@ SaveRTC:
 	ld a, $a
 	ld [MBC3SRamEnable], a
 
-; do not talk to the RTC hardware in the no-RTC patch
-if !DEF(NO_RTC)
 	; pulse the RTC to get its value
 	call LatchClock
 	; set the MBC3 register to the RTC day high byte & status flags
@@ -42,7 +40,6 @@ if !DEF(NO_RTC)
 	ld [MBC3SRamBank], a
 	; clear clock overflow bit
 	res 7, [hl]
-endc
 
 	; select the SRAM bank for the saved RTC status flags
 	ld a, BANK(sRTCStatusFlags)
@@ -61,9 +58,6 @@ StartClock::
 	; bit 5: Day count exceeds 139
 	; bit 6: Day count exceeds 255
 	call c, RecordRTCStatus
-if DEF(NO_RTC)
-	ret
-else
 	; start the RTC hardware running
 	; it will continue to count time passing while the GameBoy is off
 	; turn on the SRAM, where the RTC hardware is also located
@@ -83,7 +77,6 @@ else
 	ld [MBC3RTC], a
 	; remember to switch off the SRAM
 	jmp CloseSRAM
-endc
 
 _FixDays:
 	ld hl, wRTCDayHi

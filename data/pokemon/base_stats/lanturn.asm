@@ -1,10 +1,5 @@
-if DEF(FAITHFUL)
 	db 125,  58,  58,  67,  76,  76 ; 460 BST
 	;   hp  atk  def  spe  sat  sdf
-else
-	db 125,  58,  58,  67,  86,  86 ; 480 BST
-	;   hp  atk  def  spe  sat  sdf
-endc
 
 	db WATER, ELECTRIC ; type
 	db 75 ; catch rate

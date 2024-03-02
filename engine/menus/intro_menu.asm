@@ -118,7 +118,10 @@ ResetWRAM:
 	ld bc, wMoney - wGameData
 	rst ByteFill
 	ld hl, wMoneyEnd
-	ld bc, wBattlePoints - wMoneyEnd
+	ld bc, wKeyItems - wMoneyEnd
+	rst ByteFill
+	ld hl, wKeyItemsEnd
+	ld bc, wBattlePoints - wKeyItemsEnd
 	rst ByteFill
 	ld hl, wBattlePointsEnd
 	ld bc, wGameDataEnd - wBattlePointsEnd
@@ -377,10 +380,6 @@ ConfirmContinue:
 WarnVBA:
 	call CheckVBA
 	ret z
-if !DEF(DEBUG)
-	ld hl, .WarnVBAText
-	jmp PrintText
-else
 	ld hl, wOptions1
 	push hl
 	set NO_TEXT_SCROLL, [hl]
@@ -389,7 +388,6 @@ else
 	pop hl
 	res NO_TEXT_SCROLL, [hl]
 	ret
-endc
 
 .WarnVBAText:
 	text_far _WarnVBAText
@@ -594,7 +592,6 @@ ProfElmSpeech:
 
 	ld hl, ElmText1
 	call PrintText
-if !DEF(DEBUG)
 	ld c, 15
 	call FadeToWhite
 	call ClearTileMap
@@ -641,7 +638,6 @@ if !DEF(DEBUG)
 
 	ld hl, ElmText5
 	call PrintText
-endc
 
 	call InitGender
 

@@ -7,11 +7,7 @@
 	db NO_ITEM, NO_ITEM ; held items
 	dn GENDER_F50, HATCH_SLOWEST ; gender ratio, step cycles to hatch
 
-if DEF(FAITHFUL)
 	abilities_for PUPITAR, SHED_SKIN, SHED_SKIN, SHED_SKIN
-else
-	abilities_for PUPITAR, SHED_SKIN, SHED_SKIN, BATTLE_ARMOR
-endc
 	db GROWTH_SLOW ; growth rate
 	dn EGG_MONSTER, EGG_MONSTER ; egg groups
 
