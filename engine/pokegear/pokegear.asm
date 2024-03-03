@@ -2011,15 +2011,11 @@ TownMapPlayerIcon:
 
 InitializePokegearPlayerIcon:
 	depixel 0, 0
+	ld b, SPRITE_ANIM_INDEX_RED_WALK ; Male
 	ld a, [wPlayerGender]
-	ld b, SPRITE_ANIM_INDEX_RED_WALK
-	and a ; PLAYER_MALE
+	bit 0, a
 	jr z, .got_gender
-	ld b, SPRITE_ANIM_INDEX_BLUE_WALK
-	dec a ; PLAYER_FEMALE
-	jr z, .got_gender
-	; PLAYER_ENBY
-	ld b, SPRITE_ANIM_INDEX_GREEN_WALK
+	ld b, SPRITE_ANIM_INDEX_BLUE_WALK ; Female
 .got_gender
 	ld a, b
 	call InitSpriteAnimStruct

@@ -9,14 +9,9 @@ Script_OverworldWhiteout::
 Script_Whiteout:
 	callasm LoseMoney
 	iffalsefwd .whiteout_text
-	readmem wBattlePlayerAction
-	ifequalfwd BATTLEACTION_FORFEIT, .forfeit_text
 	callasm DetermineWildBattlePanic
 	iffalsefwd .whiteout_wild_text
 	farwritetext WhiteoutToTrainerText
-	sjumpfwd .text_done
-.forfeit_text
-	farwritetext ForfeitToTrainerText
 	sjumpfwd .text_done
 .whiteout_wild_text
 	farwritetext WhiteoutToWildText

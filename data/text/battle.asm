@@ -69,11 +69,10 @@ BattleText_EnemyCantEscape:
 	line "can't escape!"
 	prompt
 
-DealtXDamageText:
-	text "Dealt "
-	text_decimal wCurDamage, 2, 5
-	text " dmg"
-	line "before roll."
+BattleText_TheresNoEscapeFromTrainerBattle:
+	text "No! There's no"
+	line "running from a"
+	cont "trainer battle!"
 	prompt
 
 HurtByPoisonText:

@@ -72,8 +72,7 @@ DEF STRING_BUFFER_LENGTH EQU 19
 	const VAR_PKMN_JOURNALS    ; 18
 	const VAR_TRAINER_STARS    ; 19
 	const VAR_LANDMARK         ; 1a
-	const VAR_PLAYERGENDER     ; 1b
-DEF NUM_VARS EQU const_value       ; 1c
+DEF NUM_VARS EQU const_value       ; 1b
 
 ; PlayerEventScriptPointers indexes (see engine/overworld/events.asm)
 	const_def -1
@@ -351,7 +350,6 @@ DEF NUM_PAINTINGS EQU const_value
 	const_def 1
 	const OPP_CAL
 	const OPP_CARRIE
-	const OPP_JACKY
 	const OPP_EN
 	const OPP_MADOKA
 DEF NUM_TRAINER_HOUSE_OPPONENTS EQU const_value - 1

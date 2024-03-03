@@ -9,15 +9,16 @@ _UpdatePlayerSprite::
 	jmp GetUsedSprite
 
 GetPlayerSprite:
-	ld a, [wPlayerGender]
+; Get Chris or Kris's sprite.
 	ld hl, ChrisStateSprites
-	and a ; PLAYER_MALE
+	ld a, [wPlayerSpriteSetupFlags]
+	bit 2, a
+	jr nz, .go
+	ld a, [wPlayerGender]
+	bit 0, a
 	jr z, .go
 	ld hl, KrisStateSprites
-	dec a ; PLAYER_FEMALE
-	jr z, .go
-	; PLAYER_ENBY
-	ld hl, CrysStateSprites
+
 .go
 	ld a, [wPlayerState]
 	ld c, a

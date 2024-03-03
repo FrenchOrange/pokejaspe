@@ -2322,24 +2322,6 @@ WhiteoutToTrainerText::
 	line "out!"
 	done
 
-SECTION "ForfeitToTrainerText", ROMX
-ForfeitToTrainerText::
-	text "<PLAYER> forfeit-"
-	line "ed the battle…"
-
-	para "<PLAYER> paid"
-	line "¥"
-	text_decimal hMoneyTemp, 3, 7
-	text " to the"
-	cont "winner…"
-
-	para "………………"
-	line "………………"
-
-	para "<PLAYER> blacked"
-	line "out!"
-	done
-
 SECTION "_PoisonFaintText", ROMX
 _PoisonFaintText::
 	text_ram wStringBuffer3

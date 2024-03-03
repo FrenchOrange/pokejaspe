@@ -33,7 +33,6 @@ DEF KRIS EQU __trainer_class__
 DEF CHRIS EQU __trainer_class__
 	trainerclass CAL ; 2
 
-DEF CRYS EQU __trainer_class__
 	trainerclass JACKY ; 3
 
 	trainerclass FALKNER ; 4

@@ -1791,10 +1791,6 @@ BattleCommand_damagevariation:
 	ret c
 
 .go
-	push hl
-	ld hl, DealtXDamageText
-	call StdBattleTextbox
-	pop hl
 
 	; Start with the current (100%) damage.
 	xor a

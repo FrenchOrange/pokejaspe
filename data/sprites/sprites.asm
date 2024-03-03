@@ -204,9 +204,6 @@ SpriteHeaders:
 	overworld_sprite KatySpriteGFX, WALKING_SPRITE, PAL_OW_BROWN
 	overworld_sprite AlolanExeggutorSpriteGFX, BIG_GYARADOS_SPRITE, PAL_OW_BROWN
 	overworld_sprite SoldierSpriteGFX, WALKING_SPRITE, PAL_OW_GREEN
-	overworld_sprite CrysSpriteGFX, WALKING_SPRITE, PAL_OW_GREEN
-	overworld_sprite CrysBikeSpriteGFX, WALKING_SPRITE, PAL_OW_GREEN
-	overworld_sprite CrysSurfSpriteGFX, WALKING_SPRITE, PAL_OW_GREEN
 	overworld_sprite ThortonSpriteGFX, WALKING_SPRITE, PAL_OW_GREEN
  	overworld_sprite ChrisRunSpriteGFX, WALKING_SPRITE, PAL_OW_RED
  	overworld_sprite KrisRunSpriteGFX, WALKING_SPRITE, PAL_OW_BLUE

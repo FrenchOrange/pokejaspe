@@ -98,8 +98,6 @@ SpriteAnimOAMData:
 	spriteanimoam $49, .OAMData_DexSlowpoke            ; SPRITE_ANIM_OAMSET_DEX_SLOWPOKE_4
 	spriteanimoam $4c, .OAMData_DexSlowpoke            ; SPRITE_ANIM_OAMSET_DEX_SLOWPOKE_5
 	spriteanimoam $09, .OAMData_TownMapFly             ; SPRITE_ANIM_OAMSET_TOWN_MAP_FLY
-	spriteanimoam $00, .OAMData_GreenWalk              ; SPRITE_ANIM_OAMSET_GREEN_WALK_1
-	spriteanimoam $04, .OAMData_GreenWalk              ; SPRITE_ANIM_OAMSET_GREEN_WALK_2
 	spriteanimoam $00, .OAMData_PartyMon               ; SPRITE_ANIM_OAMSET_PARTY_MON_1
 	spriteanimoam $04, .OAMData_PartyMon               ; SPRITE_ANIM_OAMSET_PARTY_MON_2
 	assert_table_length NUM_SPRITE_ANIM_OAMSETS
@@ -789,10 +787,3 @@ SpriteAnimOAMData:
 	dsprite  0,  0,  1,  0, $01, $3
 	dsprite  0,  0,  2,  0, $02, $3
 	dsprite  0,  0,  3,  0, $03, $3
-
-.OAMData_GreenWalk:
-	db 4
-	dsprite -1,  0, -1,  0, $00, $2
-	dsprite -1,  0,  0,  0, $01, $2
-	dsprite  0,  0, -1,  0, $02, $2
-	dsprite  0,  0,  0,  0, $03, $2

@@ -33,7 +33,6 @@ VarActionTable:
 	dw Var_CountPokemonJournals ; execute
 	dw Var_CountTrainerStars ; execute
 	dw Var_Landmark ; execute
-	dw wPlayerGender ; in de
 	assert_table_length NUM_VARS
 
 _GetVarAction::

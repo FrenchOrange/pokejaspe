@@ -5,7 +5,3 @@ DefaultMalePlayerName:
 DefaultFemalePlayerName:
 	rawchar "Kris@@@@"
 	db 0, 0, 0
-
-DefaultEnbyPlayerName:
-	rawchar "Crys@@@@"
-	db 0, 0, 0

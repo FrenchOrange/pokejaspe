@@ -178,7 +178,7 @@ BattleTurn:
 
 	call ClearSprites
 
-	call CheckOpponentForfeit
+	call EnemyTriesToFlee
 	ret c
 
 	call DetermineMoveOrder
@@ -288,7 +288,7 @@ HandleBerserkGene:
 	call StdBattleTextbox
 	jmp SwitchTurn
 
-CheckOpponentForfeit:
+EnemyTriesToFlee:
 	ld a, [wLinkMode]
 	and a
 	jr z, .not_linked
@@ -4661,7 +4661,7 @@ CheckRunSpeed:
 
 	ld a, [wBattleMode]
 	dec a
-	jmp nz, .forfeit_to_trainer
+	jmp nz, .cant_run_from_trainer
 
 	push hl
 	call HasPlayerFainted
@@ -4737,7 +4737,7 @@ CheckRunSpeed:
 	sub e
 	ld a, h
 	sbc d
-	jmp nc, .can_escape
+	jr nc, .can_escape
 rept 5 ; multiply player speed by 32
 	add hl, hl
 endr
@@ -4754,14 +4754,14 @@ endr
 	rr e
 	ld a, e
 	and a ; prevent division by 0
-	jmp z, .can_escape
+	jr z, .can_escape
 	; calculate PSpeed*32/(ESpeed/4)
 	ldh [hDivisor], a
 	ld b, 2
 	call Divide
 	ldh a, [hQuotient + 1]
 	and a ; player can escape if result is greater than 255
-	jmp nz, .can_escape
+	jr nz, .can_escape
 	ld a, [wNumFleeAttempts]
 	ld c, a
 	ldh a, [hQuotient + 2]
@@ -4787,6 +4787,10 @@ endr
 	ld hl, BattleText_CantEscape
 	jr .print_inescapable_text
 
+.cant_run_from_trainer
+	ld hl, BattleText_TheresNoEscapeFromTrainerBattle
+	jr .print_inescapable_text
+
 .ability_prevents_escape
 	call GetOpponentAbility
 	ld b, a
@@ -4795,40 +4799,9 @@ endr
 
 .print_inescapable_text
 	call StdBattleTextbox
-.dont_forfeit
 	call LoadTileMapToTempTileMap
 	and a
 	ret
-
-.forfeit_to_trainer
-	ld hl, BattleText_AskForfeitTrainerBattle
-	call StdBattleTextbox
-	ld hl, NoYesMenuDataHeader
-	call CopyMenuHeader
-	call VerticalMenu
-	push af
-	call SafeLoadTempTileMapToTileMap
-	pop af
-	jr c, .dont_forfeit
-	ld a, [wMenuCursorY]
-	cp $1
-	jr z, .dont_forfeit
-
-	call EmptyBattleTextbox
-	ld a, COND_DISADVANTAGE
-	call SetVariableBattleMusicCondition
-	call StopDangerSound
-	call WaitSFX
-	ld de, SFX_KINESIS
-	call PlaySFX
-	call PlayerMonFaintedAnimation
-	farcall ClearPlayerHUD
-	call WaitSFX
-	ld a, BATTLEACTION_FORFEIT
-	ld [wBattlePlayerAction], a
-	ld a, LOSE
-	ld [wBattleResult], a
-	jmp LostBattle
 
 .can_escape
 	call LoadTileMapToTempTileMap
@@ -8563,8 +8536,6 @@ GetTrainerBackpic:
 	ld hl, KrisBackpic
 	dec a ; PLAYER_FEMALE
 	jr z, .Decompress
-	; PLAYER_ENBY
-	ld hl, CrysBackpic
 
 .Decompress:
 	ld de, vTiles2 tile $31

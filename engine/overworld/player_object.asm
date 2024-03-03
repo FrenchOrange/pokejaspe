@@ -37,10 +37,6 @@ SpawnPlayer:
 	assert PAL_NPC_RED + 1 == PAL_NPC_BLUE
 	inc d
 	dec a ; PLAYER_FEMALE
-	jr z, .ok
-	; PLAYER_ENBY
-	assert PAL_NPC_BLUE + 1 == PAL_NPC_GREEN
-	inc d
 .ok
 	ld [hl], d
 	ld hl, MAPOBJECT_TYPE
