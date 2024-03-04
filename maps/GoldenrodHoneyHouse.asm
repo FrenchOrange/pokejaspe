@@ -24,7 +24,7 @@ GoldenrodHoneyHousePokefanFScript:
 	opentext
 	writetext .IntroText
 	promptbutton
-	verbosegiveitem SWEET_HONEY
+	verbosegiveitem HONEY
 	iffalse_endtext
 	setevent EVENT_GOT_HONEY_FROM_GOLDENROD
 	setevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1
@@ -75,7 +75,7 @@ GoldenrodHoneyHousePokefanFScript:
 .Buy1:
 	checkmoney $0, 1000
 	ifequalfwd $2, .NotEnoughMoney
-	giveitem SWEET_HONEY
+	giveitem HONEY
 	iffalse_jumpopenedtext .BagFullText
 	takemoney $0, 1000
 	sjumpfwd .Done
@@ -83,7 +83,7 @@ GoldenrodHoneyHousePokefanFScript:
 .Buy10:
 	checkmoney $0, 10000
 	ifequalfwd $2, .NotEnoughMoney
-	giveitem SWEET_HONEY, 10
+	giveitem HONEY, 10
 	iffalse_jumpopenedtext .BagFullText
 	takemoney $0, 10000
 

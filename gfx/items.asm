@@ -220,8 +220,8 @@ IceStoneIcon:: INCBIN "gfx/items/ice_stone.2bpp.lz"
 SECTION "EverstoneIcon", ROMX
 EverstoneIcon:: INCBIN "gfx/items/everstone.2bpp.lz"
 
-SECTION "ExpShareIcon", ROMX
-ExpShareIcon:: INCBIN "gfx/items/exp_share.2bpp.lz"
+SECTION "HeartScaleIcon", ROMX
+HeartScaleIcon:: INCBIN "gfx/items/heart_scale.2bpp.lz"
 
 SECTION "CheriBerryIcon", ROMX
 CheriBerryIcon:: INCBIN "gfx/items/cheri_berry.2bpp.lz"
@@ -655,8 +655,8 @@ OldAmberIcon:: INCBIN "gfx/items/old_amber.2bpp.lz"
 SECTION "MulchIcon", ROMX
 MulchIcon:: INCBIN "gfx/items/mulch.2bpp.lz"
 
-SECTION "SweetHoneyIcon", ROMX
-SweetHoneyIcon:: INCBIN "gfx/items/sweet_honey.2bpp.lz"
+SECTION "HoneyIcon", ROMX
+HoneyIcon:: INCBIN "gfx/items/honey.2bpp.lz"
 
 SECTION "MintLeafIcon", ROMX
 MintLeafIcon:: INCBIN "gfx/items/mint_leaf.2bpp.lz"
@@ -797,8 +797,8 @@ OvalCharmIcon:: INCBIN "gfx/items/oval_charm.2bpp.lz"
 SECTION "CatchCharmIcon", ROMX
 CatchCharmIcon:: INCBIN "gfx/items/catch_charm.2bpp.lz"
 
-SECTION "WingCaseIcon", ROMX
-WingCaseIcon:: INCBIN "gfx/items/wing_case.2bpp.lz"
+SECTION "ExpShareIcon", ROMX
+ExpShareIcon:: INCBIN "gfx/items/exp_share.2bpp.lz"
 
 SECTION "SilphScope2Icon", ROMX
 SilphScope2Icon:: INCBIN "gfx/items/silphscope2.2bpp.lz"

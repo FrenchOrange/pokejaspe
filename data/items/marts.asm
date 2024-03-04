@@ -280,7 +280,7 @@ IndigoPlateauMart:
 	db FULL_RESTORE
 	db REVIVE
 	db FULL_HEAL
-	db EXP_SHARE
+	db ESCAPE_ROPE
 	db -1
 
 ViridianMart:
@@ -412,7 +412,7 @@ Celadon4FMart:
 	db LEAF_STONE
 	db ICE_STONE
 	db LINKING_CORD
-	db EXP_SHARE
+	db ESCAPE_ROPE
 	db LOVELY_MAIL
 	db SURF_MAIL
 	db -1

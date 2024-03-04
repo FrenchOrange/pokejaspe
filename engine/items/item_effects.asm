@@ -131,7 +131,7 @@ ItemEffects:
 	dw EvoStoneEffect     ; DUSK_STONE
 	dw EvoStoneEffect     ; SHINY_STONE
 	dw IsntTheTimeMessage ; EVERSTONE
-	dw IsntTheTimeMessage ; EXP_SHARE
+	dw IsntTheTimeMessage ; HEART_SCALE
 	dw IsntTheTimeMessage ; SILK_SCARF
 	dw IsntTheTimeMessage ; BLACK_BELT
 	dw IsntTheTimeMessage ; SHARP_BEAK
@@ -296,7 +296,7 @@ KeyItemEffects:
 	dw Itemfinder         ; ITEMFINDER
 	dw CoinCase           ; COIN_CASE
 	dw ApricornBox        ; APRICORN_BOX
-	dw IsntTheTimeMessage ; WING_CASE
+	dw ExpShareEffect     ; EXP_SHARE
 	dw GBCSounds          ; GBC_SOUNDS
 	dw BlueCard           ; BLUE_CARD
 	dw SquirtBottle       ; SQUIRTBOTTLE
@@ -1884,236 +1884,26 @@ BlueCard:
 	text_far _BlueCardBalanceText
 	text_end
 
-WingCase_MonSelected:
-; Runs when a mon has been selected.
-	; What wing does the player want to choose?
-	ldh a, [hBGMapMode]
-	push af
-	ld a, [wMenuScrollPosition]
-	push af
-	xor a
-	ld [wMenuScrollPosition], a
-	call LoadStandardMenuHeader
-	ld hl, .WingMenu
-	call CopyMenuHeader
-	call InitScrollingMenu
-	call ScrollingMenu
-	push af
-	call ExitMenu
-	pop af
-	pop af
-	ld [wMenuScrollPosition], a
-	pop af
-	ldh [hBGMapMode], a
-	ld a, [wMenuJoypad]
-	sub B_BUTTON
-	ret z
-
-	; Which wing was chosen? -1 is cancel
-	ld a, [wMenuSelection]
-	ld c, a
-	ld b, 0
-	inc a
-	ret z
-
-	; Check if we have any in the first place.
-	ld hl, wWingAmounts + 1
-	add hl, bc
-	add hl, bc
-	ld a, [hld]
-	or [hl]
-	ld a, MODERN_MAX_EV
-	jr nz, .have_wings
-	hlcoord 1, 16
-	ld de, .YouDontHaveAny
-	rst PlaceString
-	xor a
-	ret
-
-.have_wings
-	; Check how many we can use. Cap at 252, since that's the highest
-	; useful amount.
-	ld a, [hli]
-	and a
-	jr nz, .overflow
-	ld a, [hl]
-	cp MODERN_MAX_EV + 1
-	jr c, .got_amount
-.overflow
-	ld a, MODERN_MAX_EV
-.got_amount
-	ld [wItemQuantityBuffer], a
-
-	push bc
-	; This doubles as a "blank previous text".
-	hlcoord 1, 16
-	ld de, .UseHowManyText
-	rst PlaceString
-	farcall SelectWingQuantity
-	pop bc
-	jr c, .done
-
-	; Compare the given input with the amount we can actually apply.
-	ld a, [wItemQuantityChangeBuffer]
-	call CheckEVCap
-	ld [wItemQuantityChangeBuffer], a
-	ld hl, .XWillBeAppliedText
-	jr nc, .got_apply_str
-	ld hl, .OnlyXWillBeAppliedText
-
-	; If a is zero, return. a=1 will print the "no effect" message.
-	and a
-	ld a, 1
-	ret z
-
-	; Otherwise, a was modified.
-.got_apply_str
-	push bc
-	call PrintText
-	call YesNoBox
-	pop bc
-	jr c, .done
-
-	; Add EVs
-	push bc
-	ld a, MON_EVS
-	add c
-	call GetPartyParamLocationAndValue
-	ld a, [wItemQuantityChangeBuffer]
-	push af
-	add [hl]
-	ld [hl], a
-
-	; Deduct wing amount
-	ld hl, wWingAmounts + 1
-	add hl, bc
-	add hl, bc
-	pop af
-	ld b, a
-	ld a, [hl]
-	sub b
-	ld [hld], a
-	jr nc, .no_underflow
-	dec [hl]
-
-.no_underflow
-	call UpdatePkmnStats
-	call Play_SFX_FULL_HEAL
-	farcall WritePartyMenuTilemap
-	pop bc
-	call _GetStatString
-	ld a, MON_SPECIES
-	call GetPartyParamLocationAndValue
-	ld [wNamedObjectIndex], a
-	ld bc, MON_FORM - MON_SPECIES
-	add hl, bc
-	ld a, [hl]
-	ld [wNamedObjectIndex+1], a
-	call GetPokemonName
-	ld hl, ItemStatRoseText
-	call PrintText
-
-.done
-	xor a
-	ret
-
-.WingMenu:
-	db MENU_BACKUP_TILES
-	menu_coords 7, 1, 18, 14
-	dw .MenuData
-	db 1 ; default option
-
-.MenuData:
-	db $20
-	db 7, 7
-	db SCROLLINGMENU_ITEMS_NORMAL
-	dba .MenuItems
-	dba .DisplayWingName
-	dba .DisplayWingAmount
-	dba .DisplayWingDesc
-
-.MenuItems:
-; Note that the order doesn't match the internal index order,
-; because Swift Wing (Speed) is last.
-	db NUM_WINGS
-	table_width 1
-	db HEALTH_WING
-	db MUSCLE_WING
-	db RESIST_WING
-	db GENIUS_WING
-	db CLEVER_WING
-	db SWIFT_WING
-	assert_table_length NUM_WINGS
-	db -1
-
-.DisplayWingName:
-	ld hl, WingNames
-	; fallthrough
-.DisplayNthString:
-	ld a, [wMenuSelection]
-	call GetNthString
-	call SwapHLDE
-	rst PlaceString
-	ret
-
-.DisplayWingAmount:
-	ld hl, wWingAmounts
-	ld bc, 2
-	ld a, [wMenuSelection]
-	rst AddNTimes
-	call SwapHLDE
-	ld bc, SCREEN_WIDTH
-	add hl, bc
-	ld a, "×"
-	ld [hli], a
-	lb bc, 2, 3
-	jmp PrintNum
-
-.DisplayWingDesc:
-	; This doubles as a "blank previous text".
-	hlcoord 1, 16
-	ld de, .CancelStr
-	rst PlaceString
-
-	; Check if we're hovering over cancel
-	ld a, [wMenuSelection]
-	inc a
-	ret z
-	dec a
-	ld c, a
-	ld b, 0
-	call _GetStatString
-
-	ld hl, .RaisesStat
-.got_str
-	bccoord 1, 16
-	jmp PlaceWholeStringInBoxAtOnce
-
-.RaisesStat:
-	text "Raises "
-	text_ram wStringBuffer2
-	text "."
-	done
-
-.CancelStr:
-	db "Don't use.         @"
-
-.YouDontHaveAny:
-	db "You don't have any."
-	prompt
-
-.UseHowManyText:
-	db "Use how many?     @"
-
-.OnlyXWillBeAppliedText:
-	db "Only "
-.XWillBeAppliedText:
-	text_decimal wItemQuantityChangeBuffer, 1, 3
-	text " will be"
-	line "applied. Proceed?"
-	done
-
 INCLUDE "data/items/wing_names.asm"
+
+ExpShareEffect:
+	ld a, [wExpShareToggle]
+	xor 1
+	ld [wExpShareToggle], a
+	and a
+	ld hl, ExpShareToggleOn
+	jp nz, PrintText
+
+	ld hl, ExpShareToggleOff
+	jp PrintText
+
+ExpShareToggleOff:
+	text_far _ExpShareToggleOff
+	text_end
+ 
+ExpShareToggleOn:
+	text_far _ExpShareToggleOn
+	text_end
 
 CoinCase:
 	ld hl, .coincasetext

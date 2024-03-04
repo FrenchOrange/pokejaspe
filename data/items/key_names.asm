@@ -15,7 +15,7 @@ KeyItemNames::
 	li "Itemfinder"
 	li "Coin Case"
 	li "Apricorn Box"
-	li "Wing Case"
+	li "Exp.Share"
 	li "GBC Sounds"
 	li "Blue Card"
 	li "SquirtBottle"

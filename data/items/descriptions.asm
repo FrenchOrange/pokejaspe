@@ -98,7 +98,7 @@ ItemDescriptions:
 	dw EscapeRopeDesc
 	dw PokeDollDesc
 	dw MulchDesc
-	dw SweetHoneyDesc
+	dw HoneyDesc
 	dw XAttackDesc
 	dw XDefendDesc
 	dw XSpeedDesc
@@ -119,7 +119,7 @@ ItemDescriptions:
 	dw DuskStoneDesc
 	dw ShinyStoneDesc
 	dw EverstoneDesc
-	dw ExpShareDesc
+	dw HeartScaleDesc
 	dw SilkScarfDesc
 	dw BlackBeltDesc
 	dw SharpBeakDesc
@@ -272,7 +272,7 @@ KeyItemDescriptions:
 	dw ItemfinderDesc
 	dw CoinCaseDesc
 	dw ApricornBoxDesc
-	dw WingCaseDesc
+	dw ExpShareDesc
 	dw GBCSoundsDesc
 	dw BlueCardDesc
 	dw SquirtBottleDesc
@@ -687,9 +687,9 @@ EverstoneDesc:
 	next "(Hold)"
 	done
 
-ExpShareDesc:
-	text "Shares battle Exp."
-	next "Points. (Hold)"
+HeartScaleDesc:
+	text "A scale coveted by"
+	next "collectors."
 	done
 
 CheriBerryDesc:
@@ -1234,7 +1234,7 @@ MulchDesc:
 	next "for Berry trees."
 	done
 
-SweetHoneyDesc:
+HoneyDesc:
 	text "The aroma attracts"
 	next "wild #mon."
 	done
@@ -1695,7 +1695,7 @@ TypeChartDesc:
 	next "type advantages."
 	done
 
-WingCaseDesc:
-	text "Holds up to 999 of"
-	next "each Wing."
+ExpShareDesc:
+	text "Shares battle Exp."
+	next "Points."
 	done

@@ -18,19 +18,35 @@ RockItemEncounter:
 	ret
 
 .RockItems:
+; fossils
 	db 1, HELIX_FOSSIL
 	db 1, DOME_FOSSIL
 	db 1, OLD_AMBER
-	db 1, BIG_NUGGET
-	db 2, RARE_BONE
-	db 4, NUGGET
+; revives
+	db 2, MAX_REVIVE
+	db 2, REVIVE
+; evo stones
+	db 4, SUN_STONE
+	db 4, LEAF_STONE
+	db 4, MOON_STONE
+	db 4, THUNDERSTONE
+	db 4, WATER_STONE
+	db 4, FIRE_STONE
+; precious rocks
+	db 6, EVERSTONE
 	db 6, STAR_PIECE
-	db 12, BIG_PEARL
-	db 18, STARDUST
+	db 6, HEART_SCALE
+; weather rocks
+	db 12, SMOOTH_ROCK
+	db 12, ICY_ROCK
+	db 12, HEAT_ROCK
+	db 12, DAMP_ROCK
+; junk treasures
+	db 24, IRON_BALL
+	db 24, RARE_BONE
+	db 24, LIGHT_CLAY
 	db 24, HARD_STONE
-	db 24, SOFT_SAND
-	db 48, PEARL
-	db 64, BRICK_PIECE
+	db 24, BRICK_PIECE
 	db 48, NO_ITEM
 	db -1
 

@@ -4629,3 +4629,15 @@ CantChangeTradedMonBallTextData::
 	line "the Ball a traded"
 	cont "#mon is in."
 	prompt
+
+SECTION "_ExpShareToggleOn", ROMX
+_ExpShareToggleOn::
+	text "The EXP.SHARE was"
+	line "turned on."
+	prompt
+
+SECTION "_ExpShareToggleOff", ROMX
+_ExpShareToggleOff::
+	text "The EXP.SHARE was"
+	line "turned off."
+	prompt

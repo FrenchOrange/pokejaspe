@@ -153,7 +153,7 @@ ItemNames::
 	li "Shiny Stone"
 	li "Everstone"
 
-	li "Exp.Share"
+	li "Heart Scale"
 
 	li "Silk Scarf"
 	li "Black Belt"

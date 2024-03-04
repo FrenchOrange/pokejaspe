@@ -99,7 +99,7 @@ ItemIconPointers:
 	dba EscapeRopeIcon
 	dba PokeDollIcon
 	dba MulchIcon
-	dba SweetHoneyIcon
+	dba HoneyIcon
 	dba XAttackIcon
 	dba XDefendIcon
 	dba XSpeedIcon
@@ -120,7 +120,7 @@ ItemIconPointers:
 	dba DuskStoneIcon
 	dba ShinyStoneIcon
 	dba EverstoneIcon
-	dba ExpShareIcon
+	dba HeartScaleIcon
 	dba SilkScarfIcon
 	dba BlackBeltIcon
 	dba SharpBeakIcon
@@ -274,7 +274,7 @@ KeyItemIconPointers:
 	dba ItemfinderIcon
 	dba CoinCaseIcon
 	dba ApricornBoxIcon
-	dba WingCaseIcon
+	dba ExpShareIcon
 	dba GBCSoundsIcon
 	dba BlueCardIcon
 	dba SquirtBottleIcon

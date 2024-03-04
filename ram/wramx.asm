@@ -1034,9 +1034,8 @@ wTMHMPocketCursor::
 wPlayerState:: db
 
 wHallOfFameCount:: dw
+wExpShareToggle:: db
 wTradeFlags:: flag_array PARTY_LENGTH
-
-	ds 1 ; unused
 
 wMooMooBerries:: db
 wUndergroundSwitchPositions:: db

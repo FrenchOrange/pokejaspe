@@ -137,7 +137,7 @@ DEF NUM_BERRIES EQU const_value - FIRST_BERRY
 
 	const MULCH        ; 62
 
-	const SWEET_HONEY  ; 63
+	const HONEY        ; 63
 
 	const X_ATTACK     ; 64
 	const X_DEFEND     ; 65
@@ -164,7 +164,7 @@ DEF FIRST_STONE EQU const_value
 	const EVERSTONE    ; 77
 DEF NUM_STONES EQU const_value - FIRST_STONE
 
-	const EXP_SHARE    ; 78
+	const HEART_SCALE  ; 78
 
 	const SILK_SCARF   ; 79
 	const BLACK_BELT   ; 7a
@@ -394,7 +394,6 @@ DEF ALWAYS_ITEM_2  EQU $ff
 	const NAM_ETHER
 	const NAM_EVERSTONE
 	const NAM_EVIOLITE
-	const NAM_EXP_SHARE
 	const NAM_EXPERT_BELT
 	const NAM_FAST_BALL
 	const NAM_FIGY_BERRY
@@ -416,12 +415,13 @@ DEF ALWAYS_ITEM_2  EQU $ff
 	const NAM_HARD_STONE
 	const NAM_HEAL_BALL
 	const NAM_HEAL_POWDER
+	const NAM_HEART_SCALE
 	const NAM_HEAT_ROCK
 	const NAM_HEAVY_BALL
 	const NAM_HEAVY_BOOTS
 	const NAM_HELIX_FOSSIL
 	const NAM_HONDEW_BERRY
-	const NAM_SWEET_HONEY
+	const NAM_HONEY
 	const NAM_HP_UP
 	const NAM_HYPER_POTION
 	const NAM_ICE_HEAL
@@ -631,7 +631,7 @@ DEF NUM_WINGS EQU const_value
 	const ITEMFINDER   ; 05
 	const COIN_CASE    ; 06
 	const APRICORN_BOX ; 07
-	const WING_CASE    ; 08
+	const EXP_SHARE    ; 08
 	const GBC_SOUNDS   ; 0a
 	const BLUE_CARD    ; 0b
 	const SQUIRTBOTTLE ; 0c
@@ -668,6 +668,7 @@ DEF NUM_KEY_ITEMS EQU const_value - 1
 	const NAM_CLEAR_BELL
 	const NAM_COIN_CASE
 	const NAM_DADS_PARCEL
+	const NAM_EXP_SHARE
 	const NAM_GBC_SOUNDS
 	const NAM_GOOD_ROD
 	const NAM_GS_BALL
@@ -694,5 +695,4 @@ DEF NUM_KEY_ITEMS EQU const_value - 1
 	const NAM_SUPER_ROD
 	const NAM_SURF_BOARD
 	const NAM_TRAVEL_TRUNK
-	const NAM_WING_CASE
 	assert const_value - 1 == NUM_KEY_ITEMS

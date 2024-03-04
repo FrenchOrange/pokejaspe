@@ -124,8 +124,8 @@ endr
 	giveitem SHINY_STONE, 99
 	giveitem ODD_SOUVENIR, 99
 	giveitem MULCH, 99
-	giveitem SWEET_HONEY, 99
-	giveitem BIG_NUGGET, 99
+	giveitem HONEY, 99
+	giveitem HEART_SCALE, 99
 	; all decorations except Diploma
 for x, EVENT_DECO_BED_1, EVENT_DECO_BIG_LAPRAS_DOLL + 1
 	setevent x

@@ -539,7 +539,7 @@ wPlayerTurnsTaken:: db
 wPlayerSubstituteHP:: dw
 wEnemySubstituteHP:: dw
 
-wBackupEnemyMonBaseExp:: db
+	ds 1
 
 wCurPlayerMove:: db
 wCurEnemyMove:: db

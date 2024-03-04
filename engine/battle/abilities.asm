@@ -2134,7 +2134,7 @@ RunPostBattleAbilities::
 	ret c
 
 	; We got honey.
-	lb bc, HONEY_GATHER, SWEET_HONEY
+	lb bc, HONEY_GATHER, HONEY
 	jr .GotItemAfterBattle
 
 .Pickup:

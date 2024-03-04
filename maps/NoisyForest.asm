@@ -295,7 +295,7 @@ KatyScript:
 	iftruefwd .Done
 	writetext .RewardText
 	promptbutton
-	verbosegiveitem SWEET_HONEY
+	verbosegiveitem HONEY
 	iffalse_endtext
 	setevent EVENT_GOT_SWEET_HONEY_FROM_KATY
 .Done
