@@ -2020,7 +2020,7 @@ _CantUseItemText::
 
 SECTION "_UseCutText", ROMX
 _UseCutText::
-	text "<PLAYER> used"
+	text "<PLAYER> used the"
 	line "Sharp Sickle!"
 	prompt
 

@@ -702,25 +702,25 @@ SECTION "ParkBallIcon", ROMX
 ParkBallIcon:: INCBIN "gfx/items/park_ball.2bpp.lz"
 
 SECTION "SharpSickleIcon", ROMX
-SharpSickleIcon:: INCBIN "gfx/items/bicycle.2bpp.lz"
+SharpSickleIcon:: INCBIN "gfx/items/sharp_sickle.2bpp.lz"
 
 SECTION "MachoGloveIcon", ROMX
-MachoGloveIcon:: INCBIN "gfx/items/bicycle.2bpp.lz"
+MachoGloveIcon:: INCBIN "gfx/items/macho_glove.2bpp.lz"
 
 SECTION "MiningGearIcon", ROMX
-MiningGearIcon:: INCBIN "gfx/items/bicycle.2bpp.lz"
+MiningGearIcon:: INCBIN "gfx/items/mining_gear.2bpp.lz"
 
 SECTION "SurfBoardIcon", ROMX
-SurfBoardIcon:: INCBIN "gfx/items/bicycle.2bpp.lz"
+SurfBoardIcon:: INCBIN "gfx/items/surf_board.2bpp.lz"
 
 SECTION "SportsShoesIcon", ROMX
-SportsShoesIcon:: INCBIN "gfx/items/bicycle.2bpp.lz"
+SportsShoesIcon:: INCBIN "gfx/items/sports_shoes.2bpp.lz"
 
 SECTION "DadsParcelIcon", ROMX
-DadsParcelIcon:: INCBIN "gfx/items/bicycle.2bpp.lz"
+DadsParcelIcon:: INCBIN "gfx/items/dads_parcel.2bpp.lz"
 
 SECTION "TravelTrunkIcon", ROMX
-TravelTrunkIcon:: INCBIN "gfx/items/bicycle.2bpp.lz"
+TravelTrunkIcon:: INCBIN "gfx/items/travel_trunk.2bpp.lz"
 
 SECTION "BicycleIcon", ROMX
 BicycleIcon:: INCBIN "gfx/items/bicycle.2bpp.lz"
