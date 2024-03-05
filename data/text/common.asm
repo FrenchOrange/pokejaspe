@@ -2115,7 +2115,7 @@ _CantUseTeleportText::
 
 SECTION "_UseStrengthText", ROMX
 _UseStrengthText::
-	text "<PLAYER> used"
+	text "<PLAYER> used the"
 	line "Macho Glove!"
 	done
 

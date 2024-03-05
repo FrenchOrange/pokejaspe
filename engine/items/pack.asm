@@ -211,6 +211,12 @@ UseKeyItem:
 	predef DoKeyItemEffect
 	ld a, [wItemEffectSucceeded]
 	and a
+
+	; grab and reset wUsingHMItem without changing the flags
+	ld hl, wUsingHMItem
+	ld a, [hl]
+	ld [hl], 0
+
 	jr z, .Oak
 	ld a, PACKSTATE_QUITRUNSCRIPT
 	ld [wJumptableIndex], a

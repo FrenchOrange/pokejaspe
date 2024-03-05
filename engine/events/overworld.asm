@@ -427,7 +427,6 @@ SurfFunction:
 .DoSurf:
 	call GetSurfType
 	ld [wBuffer2], a
-	call GetPartyNickname
 	ld hl, SurfFromMenuScript
 	call QueueScript
 	ld a, $81
@@ -556,7 +555,6 @@ TrySurfOW::
 
 	call GetSurfType
 	ld [wBuffer2], a
-	call GetPartyNickname
 
 	ld a, BANK(AskSurfScript)
 	ld hl, AskSurfScript
@@ -1420,7 +1418,6 @@ FishFunction:
 	dw .FishGotSomething
 	dw .FailFish
 	dw .FishNoFish
-	dw .FishGotItem
 
 .TryFish:
 	ld a, [wPlayerState]
@@ -1472,10 +1469,6 @@ FishFunction:
 	ld a, b
 	or c
 	jr z, .nonibble
-.gotanitem
-	ld a, c
-	ld [wCurItem], a
-	ld a, $5
 	ret
 
 .gotabite1
@@ -1523,37 +1516,12 @@ FishFunction:
 	ld a, $81
 	ret
 
-.FishGotItem:
-	ld a, $1
-	ld [wBuffer6], a
-	ld hl, Script_GotAnItem
-	call QueueScript
-	ld a, $81
-	ret
-
 Script_NotEvenANibble:
 	scall Script_FishCastRod
 	farwritetext _RodNothingText
 	closetext
 	callasm PutTheRodAway
 	end
-
-Script_GotAnItem:
-	scall Script_FishCastRod
-	callasm Fishing_CheckFacingUp
-	iffalsefwd .NotFacingUp
-	applymovement PLAYER, Movement_HookedItemFacingUp
-	sjumpfwd .GetTheHookedItem
-.NotFacingUp:
-	applymovement PLAYER, Movement_HookedItemNotFacingUp
-.GetTheHookedItem:
-	pause 40
-	applymovement PLAYER, Movement_RestoreRod
-	callasm PutTheRodAway
-	callasm CurItemToScriptVar
-	opentext
-	verbosegiveitem ITEM_FROM_MEM
-	endtext
 
 Script_GotABite:
 	scall Script_FishCastRod
@@ -1578,7 +1546,6 @@ Movement_BiteNotFacingUp:
 	fish_got_bite
 	fish_got_bite
 	fish_got_bite
-Movement_HookedItemNotFacingUp:
 	fish_got_bite
 	show_emote
 	step_end
@@ -1587,7 +1554,6 @@ Movement_BiteFacingUp:
 	fish_got_bite
 	fish_got_bite
 	fish_got_bite
-Movement_HookedItemFacingUp:
 	fish_got_bite
 	step_sleep_1
 	show_emote
@@ -1631,11 +1597,6 @@ PutTheRodAway:
 	ld [wPlayerAction], a
 	call UpdateSprites
 	jmp UpdatePlayerSprite
-
-CurItemToScriptVar:
-	ld a, [wCurItem]
-	ldh [hScriptVar], a
-	ret
 
 BikeFunction:
 	call .TryBike
