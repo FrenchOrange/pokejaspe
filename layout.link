@@ -168,18 +168,6 @@ ROMX $32
 ROMX $33
 	"Move Animations"
 
-ROMX $34
-	"Pic Animations"
-
-ROMX $35
-	"Pic Animations Frames 1"
-
-ROMX $36
-	"Pic Animations Frames 2"
-
-ROMX $37
-	"Pic Animations Bitmasks"
-
 ROMX $38
 	"bank38"
 

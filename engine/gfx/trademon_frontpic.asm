@@ -26,6 +26,4 @@ AnimateTrademonFrontpic:
 	farcall TradeAnim_ShowGetmonFrontpic
 	ld a, [wOTTrademonSpecies]
 	ld [wCurPartySpecies], a
-	hlcoord 7, 2
-	lb de, $0, ANIM_MON_TRADE
-	predef_jump AnimateFrontpic
+	jmp PlayCry

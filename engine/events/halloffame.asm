@@ -106,10 +106,8 @@ AnimateHallOfFame:
 	hlcoord 1, 2
 	rst PlaceString
 	call ApplyTilemapInVBlank
-	decoord 6, 5
-	ld c, $6
-	predef HOF_AnimateFrontpic
-	ld c, 60
+	call HOF_PlayCry
+	ld c, 180
 	call DelayFrames
 	and a
 	ret
@@ -372,9 +370,7 @@ _HallOfFamePC:
 	ld a, CGB_PLAYER_OR_MON_FRONTPIC_PALS
 	call GetCGBLayout
 	call SetPalettes
-	decoord 6, 5
-	ld c, $6
-	predef HOF_AnimateFrontpic
+	call HOF_PlayCry
 	and a
 	ret
 
@@ -585,3 +581,17 @@ HOF_AnimatePlayerPic:
 .PlayTime:
 	db "Play Time@"
 
+HOF_PlayCry::
+	ld a, [wCurPartySpecies]
+	cp EGG
+	jr z, .fail
+	call IsAPokemon
+	jr c, .fail
+	ld a, [wCurPartySpecies]
+	call PlayCry2
+	ret
+
+.fail
+	ld a, 1
+	ld [wCurPartySpecies], a
+	ret

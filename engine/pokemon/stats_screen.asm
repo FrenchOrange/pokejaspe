@@ -71,8 +71,6 @@ StatsScreen_WaitAnim:
 	jmp DelayFrame
 
 .try_anim
-	farcall SetUpPokeAnim
-	jr nc, .finish
 	ld hl, wStatsScreenFlags
 	res 6, [hl]
 .finish
@@ -921,9 +919,6 @@ StatsScreen_PlaceFrontpic:
 	call StatsScreen_LoadTextboxSpaceGFX
 	ld de, vTiles2 tile $00
 	predef FrontpicPredef
-	hlcoord 0, 0
-	lb de, $0, $2
-	predef LoadMonAnimation
 	ld hl, wStatsScreenFlags
 	set 6, [hl]
 	ret
@@ -936,7 +931,9 @@ StatsScreen_GetAnimationParam:
 	ret nz
 	call CheckFaintedFrzSlp
 	ccf
-	ret
+ 	ld a, $1
+ 	and a
+ 	ret
 
 CheckFaintedFrzSlp:
 	ld hl, MON_HP
@@ -1060,9 +1057,6 @@ StatsScreen_AnimateEgg:
 	ld de, vTiles2 tile $00
 	predef FrontpicPredef
 	pop de
-	hlcoord 0, 0
-	ld d, $0
-	predef LoadMonAnimation
 	ld hl, wStatsScreenFlags
 	set 6, [hl]
 	ret

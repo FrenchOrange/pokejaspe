@@ -2868,14 +2868,6 @@ Function_SetEnemyPkmnAndSendOutAnimation:
 	ld bc, wTempMonSpecies
 	farcall CheckFaintedFrzSlp
 	jr c, .skip_cry
-	farcall CheckBattleEffects
-	jr c, .cry_no_anim
-	hlcoord 12, 0
-	lb de, $0, ANIM_MON_SLOW
-	predef AnimateFrontpic
-	jr .skip_cry
-
-.cry_no_anim
 	ld a, $f
 	ld [wCryTracks], a
 	ld a, [wTempEnemyMonSpecies]
@@ -8634,15 +8626,6 @@ BattleStartMessage:
 	call CheckSleepingTreeMon
 	jr c, .skip_cry
 
-	farcall CheckBattleEffects
-	jr c, .cry_no_anim
-
-	hlcoord 12, 0
-	lb de, $0, ANIM_MON_NORMAL
-	predef AnimateFrontpic
-	jr .skip_cry ; cry is played during the animation
-
-.cry_no_anim
 	ld a, $f
 	ld [wCryTracks], a
 	ld a, [wTempEnemyMonSpecies]

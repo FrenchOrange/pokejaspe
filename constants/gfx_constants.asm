@@ -40,18 +40,6 @@ DEF SPRITEOAMSTRUCT_ATTRIBUTES rb ; 3
 DEF SPRITEOAMSTRUCT_LENGTH EQU _RS
 DEF NUM_SPRITE_OAM_STRUCTS EQU 40 ; see wShadowOAM
 
-; PokeAnims indexes (see engine/gfx/pic_animation.asm)
-	const_def
-	const ANIM_MON_SLOW
-	const ANIM_MON_NORMAL
-	const ANIM_MON_MENU
-	const ANIM_MON_TRADE
-	const ANIM_MON_EVOLVE
-	const ANIM_MON_HATCH
-	const ANIM_MON_HOF
-	const ANIM_MON_EGG1
-	const ANIM_MON_EGG2
-
 ; VWF flags (see engine/gfx/vwf.asm)
 	const_def
 	const VWF_SINGLE_F

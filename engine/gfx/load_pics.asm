@@ -34,7 +34,6 @@ FrontpicPredef:
 	call _GetFrontpic
 	ld a, BANK(vTiles3)
 	ldh [rVBK], a
-	call GetAnimatedFrontpic
 	xor a
 	ldh [rVBK], a
 	pop af
@@ -96,93 +95,6 @@ endr
 	pop bc
 	call PadFrontpic
 	pop hl
-	ret
-
-GetAnimatedFrontpic:
-	push hl
-	call GetPaddedFrontpicAddress
-	ld c, 7 * 7
-	ldh a, [hROMBank]
-	ld b, a
-	call Get2bpp
-	pop hl
-	ld de, 7 * 7 tiles
-	add hl, de
-	ld a, [wMonPicSize]
-	ld de, wDecompressScratch + 5 * 5 tiles
-	ld c, 5 * 5
-	cp 5
-	jr z, .got_dims
-	ld de, wDecompressScratch + 6 * 6 tiles
-	ld c, 6 * 6
-	cp 6
-	jr z, .got_dims
-	ld de, wDecompressScratch + 7 * 7 tiles
-	ld c, 7 * 7
-.got_dims
-	; Get animation size (total - base sprite size)
-	ld a, [wMonAnimationSize]
-	sub c
-	ret z ; Return if there's no animation
-	ld c, a
-	push hl
-	push bc
-	call LoadFrontpicTiles
-	pop bc
-	pop hl
-	ld de, wDecompressScratch
-	ldh a, [hROMBank]
-	ld b, a
-; Improved routine by pfero
-; https://gitgud.io/pfero/axyllagame/commit/486f4ed432ca49e5d1305b6402cc5540fe9d3aaa
-	; If we can load it in a single pass, just do it
-	ld a, c
-	sub 128 - 7 * 7
-	jr c, .no_overflow
-	; Otherwise, we load the first part...
-	inc a
-	ld [wMonAnimationSize], a
-	ld c, 127 - 7 * 7
-	call Get2bpp
-	; Then move up a bit and load the rest
-	ld de, wDecompressScratch + (127 - 7 * 7) tiles
-	ld hl, vTiles4
-	ldh a, [hROMBank]
-	ld b, a
-	ld a, [wMonAnimationSize]
-	ld c, a
-.no_overflow
-	jmp Get2bpp
-
-LoadFrontpicTiles:
-	ld hl, wDecompressScratch
-; bc = c * $10
-	swap c
-	ld a, c
-	and $f
-	ld b, a
-	ld a, c
-	and $f0
-	ld c, a
-; load the first c bytes to round down bc to a multiple of $100
-	push bc
-	call LoadAlignedFrontpic
-	pop bc
-; don't access echo ram
-	ld a, c
-	and a
-	jr z, .handle_loop
-	inc b
-	jr .handle_loop
-; load the remaining bytes in batches of $100
-.loop
-	push bc
-	ld c, 0
-	call LoadAlignedFrontpic
-	pop bc
-.handle_loop
-	dec b
-	jr nz, .loop
 	ret
 
 GetBackpic:

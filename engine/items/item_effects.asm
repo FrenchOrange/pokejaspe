@@ -720,14 +720,7 @@ PokeBallEffect:
 	ld a, [wEnemyMonStatus]
 	and (1 << FRZ) | SLP_MASK
 	jr nz, .skip_cry
-	farcall CheckBattleEffects
-	jr c, .cry_no_anim
-	hlcoord 12, 0
-	lb de, $0, ANIM_MON_SLOW
-	predef AnimateFrontpic
-	jr .skip_cry
 
-.cry_no_anim
 	ld a, $f
 	ld [wCryTracks], a
 	ld a, [wTempEnemyMonSpecies]
