@@ -39,34 +39,34 @@ MainMenu:
 	db "New Game@"
 	db "New Game+@"
 	db "Options@"
-	db "Music Player@"
+	db "Credits@"
 
 .Jumptable:
 	dw MainMenu_Continue
 	dw MainMenu_NewGame
 	dw MainMenu_NewGamePlus
 	dw MainMenu_Options
-	dw MainMenu_MusicPlayer
+	dw MainMenu_Credits
 
 	const_def
 	const MAINMENU_ITEM_CONTINUE      ; 0
 	const MAINMENU_ITEM_NEW_GAME      ; 1
 	const MAINMENU_ITEM_NEW_GAME_PLUS ; 2
 	const MAINMENU_ITEM_OPTION        ; 3
-	const MAINMENU_ITEM_MUSIC_PLAYER  ; 4
+	const MAINMENU_ITEM_CREDITS       ; 4
 
 MainMenuItems:
 ; MAINMENU_MENU_NEW_GAME
 	db 3
 	db MAINMENU_ITEM_NEW_GAME
-	db MAINMENU_ITEM_MUSIC_PLAYER
+	db MAINMENU_ITEM_CREDITS
 	db MAINMENU_ITEM_OPTION
 	db -1
 ; MAINMENU_MENU_CONTINUE
 	db 4
 	db MAINMENU_ITEM_CONTINUE
 	db MAINMENU_ITEM_NEW_GAME
-	db MAINMENU_ITEM_MUSIC_PLAYER
+	db MAINMENU_ITEM_CREDITS
 	db MAINMENU_ITEM_OPTION
 	db -1
 ; MAINMENU_MENU_NEW_GAME_PLUS
@@ -74,7 +74,7 @@ MainMenuItems:
 	db MAINMENU_ITEM_CONTINUE
 	db MAINMENU_ITEM_NEW_GAME
 	db MAINMENU_ITEM_NEW_GAME_PLUS
-	db MAINMENU_ITEM_MUSIC_PLAYER
+	db MAINMENU_ITEM_CREDITS
 	db MAINMENU_ITEM_OPTION
 	db -1
 
@@ -200,5 +200,5 @@ MainMenu_Options:
 MainMenu_Continue:
 	farjp Continue
 
-MainMenu_MusicPlayer:
-	farjp MusicPlayer
+MainMenu_Credits:
+	farjp ProjectCredits

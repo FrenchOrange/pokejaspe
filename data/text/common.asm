@@ -3226,12 +3226,6 @@ _MayRegisterItemText::
 	line "on Select Button."
 	done
 
-SECTION "_InitialOptionsText", ROMX
-_InitialOptionsText::
-	text "Please choose how"
-	line "you want to play."
-	prompt
-
 SECTION "_ElmText1", ROMX
 _ElmText1::
 	text "Hello! Sorry to"
